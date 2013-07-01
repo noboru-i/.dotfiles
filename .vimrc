@@ -61,6 +61,9 @@ set listchars=eol:$,tab:>\ ,extends:< "listで表示される文字のフォー�
 " make me go to next line
 set whichwrap=b,s,h,l,<,>,[,]
 
+if has("mouse")
+    set mouse=a
+endif
 
 " vimにcoffeeファイルタイプを認識させる
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
