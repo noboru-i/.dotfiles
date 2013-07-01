@@ -12,6 +12,7 @@
 
 [core]
 	excludesfile = ~/.gitignore-global
+	editor = /usr/bin/vim
 
 [merge]
 	ff = false
