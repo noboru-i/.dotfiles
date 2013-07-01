@@ -20,3 +20,7 @@
 [user]
 	name = noboru-i
 	email = ishikura.noboru@gmail.com
+
+[push]
+	default = upstream
+
