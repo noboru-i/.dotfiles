@@ -53,8 +53,8 @@ setopt share_history    # share command history data
 # bindkey -v
 
 # 言語
-# export LANG=ja_JP.UTF-8
-export LANG=C
+export LANG=ja_JP.UTF-8
+# export LANG=C
 
 # プロンプト
 local p_cdir="%B%F{blue}[%~]%f%b"
