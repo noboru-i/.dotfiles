@@ -1,25 +1,23 @@
 # パスの指定
-# MacPorts Installer addition on 2012-04-02_at_14:15:12: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
 ## android
 export PATH=/Users/ishikuranoboru/android-sdks/platform-tools:$PATH
-## nvm
-source ~/.nvm/nvm.sh
-nvm use 0.10 > /dev/null
-#rbenv
+## nodebrew
+## curl -L git.io/nodebrew | perl - setup
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+nodebrew use stable > /dev/null
+## rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-#その他のコマンド
+## その他のコマンド
 export PATH=~/bin:$PATH
-
-# lessに色をつける
-export LESS='-R'
-export LESSOPEN='| /opt/local/bin/src-hilite-lesspipe.sh %s'
 
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
+# LS_COLORSを設定しておく
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# ファイル補完候補に色を付ける
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # alias
 alias ls='ls -G'
@@ -43,6 +41,9 @@ zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAU
 zstyle ':completion:*' group-name ''
 # zsh-completions
 fpath=(~/.dotfiles/zsh-completions/src $fpath)
+## 補完に関するその他のオプション
+setopt magic_equal_subst # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
+
 
 # cd したら自動的にpushdする
 setopt auto_pushd
@@ -61,12 +62,8 @@ SAVEHIST=1000000
 setopt hist_ignore_dups # ignore duplication command history list
 setopt share_history    # share command history data
 
-# vim 風キーバインドにする
-# bindkey -v
-
 # 言語
 export LANG=ja_JP.UTF-8
-# export LANG=C
 
 # プロンプト
 local p_cdir="%B%F{blue}[%~]%f%b"
@@ -83,5 +80,4 @@ precmd () {
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 RPROMPT="%1(v|%F{green}%1v%f|)"
-
 
