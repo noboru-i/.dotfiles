@@ -34,3 +34,6 @@ export LESSOPEN='| /opt/local/bin/src-hilite-lesspipe.sh %s'
 
 export PATH=/usr/local/gradle/bin:$PATH
 
+export JAVA_HOME=`/usr/libexec/java_home`
+export JAVA=$JAVA_HOME/bin
+
