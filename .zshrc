@@ -81,3 +81,8 @@ precmd () {
 }
 RPROMPT="%1(v|%F{green}%1v%f|)"
 
+autoload -Uz add-zsh-hook
+export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
+export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
+source ~/.zsh.d/zsh-notify/notify.plugin.zsh
+
