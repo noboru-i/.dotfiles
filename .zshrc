@@ -8,6 +8,12 @@ nodebrew use stable > /dev/null
 ## rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+## pyenv
+export PYENV_ROOT=/usr/local/opt/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+## go
+export GOPATH=$HOME/.go
+export PATH=$PATH:$HOME/.go/bin
 ## その他のコマンド
 export PATH=~/bin:$PATH
 
@@ -23,6 +29,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 alias ls='ls -G'
 alias ll='ls -alFG'
 alias la='ls -a'
+alias g='git'
 
 # 補完機能を有効にする
 autoload -Uz compinit
@@ -86,3 +93,21 @@ export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
 source ~/.zsh.d/zsh-notify/notify.plugin.zsh
 
+# peco
+function peco-src () {
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
+alias s='ssh $(grep -iE "^host[[:space:]]+[^*]" ~/.ssh/config|peco|awk "{print \$2}")'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# added by travis gem
+[ -f /Users/ishikuranoboru/.travis/travis.sh ] && source /Users/ishikuranoboru/.travis/travis.sh
