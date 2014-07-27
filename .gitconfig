@@ -13,9 +13,13 @@
 [core]
 	excludesfile = ~/.gitignore-global
 	editor = /usr/bin/vim
+	attributesfile = ~/.gitattributes
+	quotepath = false
 
 [merge]
-	ff = false
+    ff = false
+[pull]
+    ff = only
 
 [user]
 	name = noboru-i
@@ -23,4 +27,8 @@
 
 [push]
 	default = upstream
+
+[ghq]
+    root = ~/.ghq
+    root = ~/.go/src
 
