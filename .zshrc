@@ -95,17 +95,10 @@ export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
 source ~/.zsh.d/zsh-notify/notify.plugin.zsh
 
 # peco
-function peco-src () {
-    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
-    if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
-        zle accept-line
-    fi
-    zle clear-screen
-}
-zle -N peco-src
-bindkey '^]' peco-src
+for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
 alias s='ssh $(grep -iE "^host[[:space:]]+[^*]" ~/.ssh/config|peco|awk "{print \$2}")'
+bindkey '^]' peco-src
+bindkey '^r' peco-select-history
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
