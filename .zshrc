@@ -30,6 +30,7 @@ alias ls='ls -G'
 alias ll='ls -alFG'
 alias la='ls -a'
 alias g='git'
+alias subl='/opt/homebrew-cask/Caskroom/sublime-text3/3059/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # 補完機能を有効にする
 autoload -Uz compinit
