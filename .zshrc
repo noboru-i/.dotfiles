@@ -11,11 +11,20 @@ eval "$(rbenv init -)"
 ## pyenv
 export PYENV_ROOT=/usr/local/opt/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+## plenv
+eval "$(plenv init -)"
+export PERL_LOCAL_LIB_ROOT="/Users/`whoami`/perl5:$PERL_LOCAL_LIB_ROOT";
+export PERL_MB_OPT="--install_base "/Users/`whoami`/perl5"";
+export PERL_MM_OPT="INSTALL_BASE=/Users/`whoami`/perl5";
+export PERL5LIB="/Users/`whoami`/perl5/lib/perl5:$PERL5LIB";
+export PATH="/Users/`whoami`/perl5/bin:$PATH";
 ## go
 export GOPATH=$HOME/.go
 export PATH=$PATH:$HOME/.go/bin
 ## その他のコマンド
 export PATH=~/bin:$PATH
+## Android
+export PATH=~/android-sdks/tools:$PATH
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -30,7 +39,7 @@ alias ls='ls -G'
 alias ll='ls -alFG'
 alias la='ls -a'
 alias g='git'
-alias subl='/opt/homebrew-cask/Caskroom/sublime-text3/3059/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias subl='/opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3059/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # 補完機能を有効にする
 autoload -Uz compinit
@@ -72,6 +81,9 @@ setopt share_history    # share command history data
 
 # 言語
 export LANG=ja_JP.UTF-8
+
+# svn
+export SVN_EDITOR=vim
 
 # プロンプト
 local p_cdir="%B%F{blue}[%~]%f%b"
