@@ -6,7 +6,7 @@ brew upgrade
 brew upgrade brew-cask
 
 brew install gcc || true
-brew install brew-cask || true
+brew install caskroom/cask/brew-cask || true
 brew install git || true
 brew install tig || true
 brew install tree || true
@@ -19,8 +19,12 @@ brew install go || true
 brew install plenv || true
 brew install perl-build || true
 brew install jq || true
+brew install terminal-notifier || true
 
 brew install peco || true
+
+brew install rbenv || true
+brew install ruby-build || true
 
 brew cask install skype || true
 brew cask install skitch || true
@@ -49,8 +53,6 @@ brew cask install genymotion || true
 
 brew tap caskroom/homebrew-versions
 brew cask install sublime-text3 || true
-
-brew install homebrew/php/phplint || true
 
 brew cleanup
 brew cask cleanup
