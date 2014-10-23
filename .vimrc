@@ -14,8 +14,8 @@ NeoBundle 'YankRing.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 " indentの深さに色を付ける
 NeoBundle 'nathanaelkane/vim-indent-guides'
-" zencoding
-NeoBundle 'git://github.com/mattn/zencoding-vim.git'
+" emmet
+NeoBundle 'mattn/emmet-vim'
 
 filetype plugin indent on
 NeoBundleCheck
