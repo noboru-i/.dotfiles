@@ -1,10 +1,11 @@
-brew tap phinze/homebrew-cask || true
 brew tap homebrew/versions|| true
 brew tap homebrew/binary || true
 brew tap peco/peco || true
 brew update
 brew upgrade
+brew upgrade brew-cask
 
+brew install gcc || true
 brew install brew-cask || true
 brew install git || true
 brew install tig || true
@@ -49,8 +50,7 @@ brew cask install genymotion || true
 brew tap caskroom/homebrew-versions
 brew cask install sublime-text3 || true
 
-brew tap josegonzalez/homebrew-php || true
-brew install phplint
+brew install homebrew/php/phplint || true
 
 brew cleanup
 brew cask cleanup
