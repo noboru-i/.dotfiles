@@ -1,10 +1,12 @@
 brew tap homebrew/versions|| true
 brew tap homebrew/binary || true
 brew tap peco/peco || true
+brew tap sanemat/font || true
 brew update
 brew upgrade
 brew upgrade brew-cask
 
+brew install automake || true
 brew install gcc || true
 brew install caskroom/cask/brew-cask || true
 brew install git || true
@@ -20,6 +22,8 @@ brew install plenv || true
 brew install perl-build || true
 brew install jq || true
 brew install terminal-notifier || true
+brew install fontforge --use-gcc --without-python || true
+brew install ricty || true
 
 brew install peco || true
 
