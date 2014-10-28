@@ -30,6 +30,9 @@ brew install peco || true
 brew install rbenv || true
 brew install ruby-build || true
 
+brew install homebrew/dupes/apple-gcc42 || true
+brew install homebrew/php/phplint || true
+
 brew cask install skype || true
 brew cask install skitch || true
 brew cask install evernote || true
@@ -57,6 +60,8 @@ brew cask install genymotion || true
 
 brew tap caskroom/homebrew-versions
 brew cask install sublime-text3 || true
+
+brew cask install github || true
 
 brew cleanup
 brew cask cleanup
