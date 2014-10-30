@@ -24,6 +24,7 @@ brew install jq || true
 brew install terminal-notifier || true
 brew install fontforge --use-gcc --without-python || true
 brew install ricty || true
+brew install --HEAD hub || true
 
 brew install peco || true
 
