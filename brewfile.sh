@@ -20,7 +20,7 @@ brew install plenv || true
 brew install perl-build || true
 brew install jq || true
 brew install terminal-notifier || true
-
+brew install colordiff || true
 brew install peco || true
 
 brew install rbenv || true
