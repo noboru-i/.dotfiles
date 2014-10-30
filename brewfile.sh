@@ -1,10 +1,12 @@
 brew tap homebrew/versions|| true
 brew tap homebrew/binary || true
 brew tap peco/peco || true
+brew tap sanemat/font || true
 brew update
 brew upgrade
 brew upgrade brew-cask
 
+brew install automake || true
 brew install gcc || true
 brew install caskroom/cask/brew-cask || true
 brew install git || true
@@ -21,10 +23,17 @@ brew install perl-build || true
 brew install jq || true
 brew install terminal-notifier || true
 brew install colordiff || true
+brew install fontforge --use-gcc --without-python || true
+brew install ricty || true
+brew install --HEAD hub || true
+
 brew install peco || true
 
 brew install rbenv || true
 brew install ruby-build || true
+
+brew install homebrew/dupes/apple-gcc42 || true
+brew install homebrew/php/phplint || true
 
 brew cask install skype || true
 brew cask install skitch || true
@@ -53,6 +62,8 @@ brew cask install genymotion || true
 
 brew tap caskroom/homebrew-versions
 brew cask install sublime-text3 || true
+
+brew cask install github || true
 
 brew cleanup
 brew cask cleanup
