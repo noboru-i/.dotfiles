@@ -1,20 +1,21 @@
 [alias]
-	b = branch
-	ba = branch --all
-	co = checkout
-	d = diff
-	l = log --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
-	lv = log --name-status --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
-	s = status --branch --short
+  b = branch
+  ba = branch --all
+  co = checkout
+  d = diff
+  l = log --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
+  lv = log --name-status --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
+  s = status --branch --short
+  delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 
 [color]
-	ui = true
+  ui = true
 
 [core]
-	excludesfile = ~/.gitignore-global
-	editor = /usr/bin/vim
-	attributesfile = ~/.gitattributes
-	quotepath = false
+  excludesfile = ~/.gitignore-global
+  editor = /usr/bin/vim
+  attributesfile = ~/.gitattributes
+  quotepath = false
 
 [merge]
     ff = false
@@ -22,16 +23,16 @@
     ff = only
 
 [user]
-	name = noboru-i
-	email = ishikura.noboru@gmail.com
+  name = noboru-i
+  email = ishikura.noboru@gmail.com
 
 [push]
-	default = current
+  default = current
 
 [ghq]
-    root = ~/.ghq
-    root = ~/.go/src
+  root = ~/.ghq
+  root = ~/.go/src
 
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
