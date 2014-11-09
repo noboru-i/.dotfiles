@@ -65,6 +65,8 @@ brew cask install sublime-text3 || true
 
 brew cask install github || true
 
+brew cask install macdown || true
+
 brew cleanup
 brew cask cleanup
 
