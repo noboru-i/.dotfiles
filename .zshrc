@@ -69,6 +69,12 @@ setopt magic_equal_subst # コマンドラインの引数で --prefix=/usr な�
 autoload -Uz compinit
 compinit
 
+# Ctrl+wで"/"までを消す
+autoload -Uz select-word-style
+select-word-style default
+zstyle ':zle:*' word-chars " /=;@:{},|"
+zstyle ':zle:*' word-style unspecified
+
 # cd したら自動的にpushdする
 setopt auto_pushd
 # 重複したディレクトリを追加しない
