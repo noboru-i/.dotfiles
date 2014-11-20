@@ -133,3 +133,10 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
 [ -f /Users/ishikuranoboru/.travis/travis.sh ] && source /Users/ishikuranoboru/.travis/travis.sh
+
+# Antigen
+if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
+    source $HOME/.zsh/antigen/antigen.zsh
+    antigen bundle git@github.com:zsh-users/zsh-syntax-highlighting.git
+    antigen apply
+fi
