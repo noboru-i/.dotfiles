@@ -61,7 +61,6 @@ zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAU
 # マッチ種別を別々に表示
 zstyle ':completion:*' group-name ''
 # zsh-completions
-fpath=(~/.dotfiles/zsh-completions/src $fpath)
 fpath=(~/.dotfiles/hub-zsh-completion $fpath)
 ## 補完に関するその他のオプション
 setopt magic_equal_subst # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
@@ -138,5 +137,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
     source $HOME/.zsh/antigen/antigen.zsh
     antigen bundle git@github.com:zsh-users/zsh-syntax-highlighting.git
+    antigen bundle git@github.com:zsh-users/zsh-completions.git src
     antigen apply
 fi
