@@ -19,9 +19,9 @@
   quotepath = false
 
 [merge]
-    ff = false
+  ff = false
 [pull]
-    ff = only
+  ff = only
 
 [user]
   name = noboru-i
