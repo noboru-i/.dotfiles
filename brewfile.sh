@@ -1,8 +1,9 @@
+brew update
+brew upgrade
+
 brew tap homebrew/versions
 brew tap homebrew/binary
 brew tap sanemat/font
-brew update
-brew upgrade
 brew upgrade brew-cask
 
 brew install automake
