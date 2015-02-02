@@ -35,6 +35,7 @@ brew install ghq
 
 brew install rbenv
 brew install ruby-build
+brew install nodebrew
 
 brew tap caskroom/versions
 brew cask install java6
