@@ -30,6 +30,9 @@ brew install maven
 brew tap peco/peco
 brew install peco
 
+brew tap motemen/ghq
+brew install ghq
+
 brew install rbenv
 brew install ruby-build
 
