@@ -52,6 +52,7 @@ brew cask install google-japanese-ime
 brew cask install google-chrome-beta
 brew cask install google-chrome-canary
 brew cask install firefox
+brew cask install fluid
 
 brew cask install virtualbox
 brew cask install vagrant
