@@ -45,7 +45,7 @@ fi
 alias ls='ls -G'
 alias ll='ls -alFG'
 alias la='ls -a'
-alias subl='/opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3059/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias subl='/opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3065/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 function git(){ hub "$@" }
 
 ## 補完候補に色を付ける

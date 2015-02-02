@@ -50,6 +50,7 @@ brew cask install cyberduck
 brew cask install imageoptim
 brew cask install speedlimit
 brew cask install google-japanese-ime
+brew cask install clipmenu
 
 brew cask install google-chrome-beta
 brew cask install google-chrome-canary
