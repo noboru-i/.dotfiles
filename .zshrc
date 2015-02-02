@@ -119,7 +119,7 @@ add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 200
 export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
-source ~/.zsh.d/zsh-notify/notify.plugin.zsh
+source ~/.zsh/zsh-notify/notify.plugin.zsh
 
 # peco
 for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources

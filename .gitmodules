@@ -13,3 +13,6 @@
 [submodule ".zsh/antigen"]
 	path = .zsh/antigen
 	url = git@github.com:zsh-users/antigen.git
+[submodule ".zsh/zsh-notify"]
+	path = .zsh/zsh-notify
+	url = git@github.com:marzocchi/zsh-notify.git
