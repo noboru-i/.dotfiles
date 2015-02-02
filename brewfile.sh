@@ -72,6 +72,8 @@ brew cask install github
 
 brew cask install macdown
 
+brew cask install dropbox
+
 brew install Caskroom/cask/xquartz
 brew install colordiff
 
