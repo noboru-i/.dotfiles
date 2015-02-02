@@ -22,7 +22,6 @@ brew install plenv
 brew install perl-build
 brew install jq
 brew install terminal-notifier
-brew install colordiff
 brew install fontforge --use-gcc --without-python
 brew install ricty
 brew install --HEAD hub
@@ -33,9 +32,6 @@ brew install peco
 
 brew install rbenv
 brew install ruby-build
-
-brew install homebrew/dupes/apple-gcc42
-brew install homebrew/php/phplint
 
 brew cask install skype
 brew cask install skitch
@@ -69,6 +65,9 @@ brew cask install sublime-text3
 brew cask install github
 
 brew cask install macdown
+
+brew install Caskroom/cask/xquartz
+brew install colordiff
 
 brew cleanup
 brew cask cleanup
