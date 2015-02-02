@@ -33,6 +33,9 @@ brew install peco
 brew install rbenv
 brew install ruby-build
 
+brew tap caskroom/versions
+brew cask install java6
+
 brew cask install skype
 brew cask install skitch
 brew cask install evernote
