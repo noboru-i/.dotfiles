@@ -43,6 +43,7 @@ brew cask install java6
 brew cask install skype
 brew cask install skitch
 brew cask install evernote
+brew cask install kobito
 
 brew cask install alfred
 brew cask install dash
