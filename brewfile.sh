@@ -26,6 +26,7 @@ brew install fontforge --use-gcc --without-python
 brew install ricty
 brew install --HEAD hub
 brew install maven
+brew install gibo
 
 brew tap peco/peco
 brew install peco
