@@ -28,6 +28,8 @@ brew install --HEAD hub
 brew install maven
 brew install gibo
 brew install sbt
+brew install docker
+brew install boot2docker
 
 brew tap peco/peco
 brew install peco
