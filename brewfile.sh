@@ -27,6 +27,7 @@ brew install ricty
 brew install --HEAD hub
 brew install maven
 brew install gibo
+brew install sbt
 
 brew tap peco/peco
 brew install peco
@@ -40,11 +41,11 @@ brew install nodebrew
 
 brew tap caskroom/versions
 brew cask install java6
+brew cask install java7
 
 brew cask install skype
 brew cask install skitch
 brew cask install evernote
-brew cask install kobito
 
 brew cask install alfred
 brew cask install dash
@@ -68,6 +69,7 @@ brew cask install iterm2
 
 brew cask install android-studio
 brew cask install genymotion
+brew cask install intellij-idea-ce
 
 brew tap caskroom/homebrew-versions
 brew cask install sublime-text3
@@ -77,6 +79,8 @@ brew cask install github
 brew cask install macdown
 
 brew cask install dropbox
+
+brew cask install charles
 
 brew install Caskroom/cask/xquartz
 brew install colordiff
