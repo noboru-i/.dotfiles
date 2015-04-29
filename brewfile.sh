@@ -42,6 +42,7 @@ brew install ruby-build
 brew install nodebrew
 
 brew tap caskroom/versions
+brew cask install java
 brew cask install java6
 brew cask install java7
 
@@ -50,7 +51,6 @@ brew cask install skitch
 brew cask install evernote
 
 brew cask install alfred
-brew cask install dash
 
 brew cask install cyberduck
 brew cask install imageoptim
@@ -75,8 +75,6 @@ brew cask install intellij-idea-ce
 
 brew tap caskroom/homebrew-versions
 brew cask install sublime-text3
-
-brew cask install github
 
 brew cask install macdown
 
