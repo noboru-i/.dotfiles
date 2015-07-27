@@ -30,6 +30,7 @@ brew install gibo
 brew install sbt
 brew install docker
 brew install boot2docker
+brew install heroku-toolbelt
 
 brew tap peco/peco
 brew install peco
