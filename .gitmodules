@@ -7,9 +7,6 @@
 [submodule "zsh-completions"]
 	path = zsh-completions
 	url = git://github.com/zsh-users/zsh-completions.git
-[submodule "hub-zsh-completion"]
-	path = hub-zsh-completion
-	url = https://github.com/glidenote/hub-zsh-completion
 [submodule ".zsh/antigen"]
 	path = .zsh/antigen
 	url = git@github.com:zsh-users/antigen.git

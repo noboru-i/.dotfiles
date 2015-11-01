@@ -44,7 +44,7 @@ alias ls='ls -G'
 alias ll='ls -alFG'
 alias la='ls -a'
 alias subl='/opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3083/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-function git(){ hub "$@" }
+eval "$(hub alias -s)"
 
 ## 補完候補に色を付ける
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
@@ -58,13 +58,12 @@ zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
 # マッチ種別を別々に表示
 zstyle ':completion:*' group-name ''
-# zsh-completions
-fpath=(~/.dotfiles/hub-zsh-completion $fpath)
+# hub completions
+fpath=(~/.zsh/completions $fpath)
 ## 補完に関するその他のオプション
 setopt magic_equal_subst # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
 # 補完機能を有効にする
-autoload -Uz compinit
-compinit
+autoload -U compinit && compinit
 
 # Ctrl+wで"/"までを消す
 autoload -Uz select-word-style
