@@ -1,9 +1,6 @@
 # パスの指定
-## android
-export PATH=/Users/ishikuranoboru/android-sdks/platform-tools:$PATH
 ## nodebrew
-## curl -L git.io/nodebrew | perl - setup
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=~/.nodebrew/current/bin:$PATH
 nodebrew use stable > /dev/null
 ## rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -25,6 +22,7 @@ export PATH=$PATH:$HOME/.go/bin
 export PATH=~/bin:$PATH
 ## Android
 export PATH=~/android-sdks/tools:$PATH
+export PATH=~/android-sdks/platform-tools:$PATH
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -144,4 +142,3 @@ fi
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/ishikuranoboru/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
-
