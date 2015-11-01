@@ -63,7 +63,7 @@ fpath=(~/.zsh/completions $fpath)
 ## 補完に関するその他のオプション
 setopt magic_equal_subst # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
 # 補完機能を有効にする
-autoload -U compinit && compinit
+autoload -U compinit && compinit -C
 
 # Ctrl+wで"/"までを消す
 autoload -Uz select-word-style
@@ -128,16 +128,16 @@ bindkey '^r' peco-select-history
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
-[ -f /Users/ishikuranoboru/.travis/travis.sh ] && source /Users/ishikuranoboru/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # Antigen
 if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
     source $HOME/.zsh/antigen/antigen.zsh
-    antigen bundle git@github.com:zsh-users/zsh-syntax-highlighting.git
-    antigen bundle git@github.com:zsh-users/zsh-completions.git src
+    antigen bundle zsh-users/zsh-syntax-highlighting
+    antigen bundle zsh-users/zsh-completions src
     antigen apply
 fi
 
 export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/ishikuranoboru/.boot2docker/certs/boot2docker-vm
+export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1

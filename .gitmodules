@@ -4,9 +4,6 @@
 [submodule "tmux-powerline"]
 	path = tmux-powerline
 	url = git://github.com/erikw/tmux-powerline.git
-[submodule "zsh-completions"]
-	path = zsh-completions
-	url = git://github.com/zsh-users/zsh-completions.git
 [submodule ".zsh/antigen"]
 	path = .zsh/antigen
 	url = git@github.com:zsh-users/antigen.git
