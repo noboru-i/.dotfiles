@@ -23,6 +23,10 @@ export PATH=~/bin:$PATH
 ## Android
 export PATH=~/android-sdks/tools:$PATH
 export PATH=~/android-sdks/platform-tools:$PATH
+JAVA8_HOME=`/usr/libexec/java_home -v "1.8" -F`
+if [ $? -eq 0 ]; then
+    export JAVA8_HOME
+fi
 
 # 色を使用出来るようにする
 autoload -Uz colors
