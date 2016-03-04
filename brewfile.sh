@@ -24,6 +24,7 @@ brew install fontforge --use-gcc --without-python
 brew install ricty
 brew install --HEAD hub
 brew install heroku-toolbelt
+brew install carthage
 
 brew tap peco/peco
 brew install peco
@@ -65,11 +66,12 @@ brew cask install dockertoolbox
 brew cask install atom
 brew cask install iterm2
 
-brew cask install android-studio
 brew cask install genymotion
 
 brew tap caskroom/homebrew-versions
 brew cask install sublime-text3
+
+brew cask install Caskroom/versions/android-studio-canary
 
 brew cask install macdown
 
