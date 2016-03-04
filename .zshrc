@@ -119,7 +119,7 @@ autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 200
 export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
-export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
+export NOTIFY_COMMAND_COMPLETE_TIMEOUT=5
 source ~/.zsh/zsh-notify/notify.plugin.zsh
 
 # peco
@@ -142,6 +142,7 @@ if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
     antigen apply
 fi
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+# docker-machine
+if [ "`docker-machine status default`" = "Running" ]; then
+   eval "$(docker-machine env default)"
+fi
