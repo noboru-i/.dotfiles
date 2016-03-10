@@ -28,7 +28,7 @@
   email = ishikura.noboru@gmail.com
 
 [push]
-  default = simple
+  default = current
 
 [ghq]
   root = ~/.ghq
