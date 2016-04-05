@@ -39,6 +39,8 @@ brew install nodebrew
 brew install Caskroom/cask/xquartz
 brew install colordiff
 
+brew install terraform
+
 brew tap caskroom/versions
 brew cask install java
 brew cask install java6
@@ -56,7 +58,6 @@ brew cask install speedlimit
 brew cask install google-japanese-ime
 
 brew cask install google-chrome-beta
-brew cask install google-chrome-canary
 brew cask install fluid
 
 brew cask install virtualbox
@@ -80,6 +81,8 @@ brew cask install dropbox
 brew cask install charles
 
 brew cask install clipy
+
+brew cask install chatwork
 
 brew cleanup
 brew cask cleanup
