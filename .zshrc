@@ -7,7 +7,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 ## pyenv
 export PYENV_ROOT=/usr/local/opt/pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 ## plenv
 eval "$(plenv init -)"
 export PERL_LOCAL_LIB_ROOT="/Users/`whoami`/perl5:$PERL_LOCAL_LIB_ROOT";
