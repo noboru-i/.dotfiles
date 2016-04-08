@@ -48,7 +48,6 @@ fi
 alias ls='ls -G'
 alias ll='ls -alFG'
 alias la='ls -a'
-alias subl='/opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3083/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 eval "$(hub alias -s)"
 
 ## 補完候補に色を付ける
