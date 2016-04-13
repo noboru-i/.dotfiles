@@ -58,8 +58,6 @@ brew cask install dockertoolbox
 brew cask install atom
 brew cask install iterm2
 
-brew cask install genymotion
-
 brew cask install Caskroom/versions/android-studio-canary
 
 brew cask install macdown
