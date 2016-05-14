@@ -45,7 +45,6 @@ brew cask install evernote
 
 brew cask install alfred
 
-brew cask install cyberduck
 brew cask install imageoptim
 brew cask install google-japanese-ime
 
@@ -69,6 +68,8 @@ brew cask install charles
 brew cask install clipy
 
 brew cask install chatwork
+
+brew cask install licecap
 
 brew cleanup
 brew cask cleanup
