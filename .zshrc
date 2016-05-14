@@ -100,9 +100,7 @@ export SVN_EDITOR=vim
 
 # プロンプト
 local p_cdir="%B%F{blue}[%~]%f%b"
-local p_info="%n@%m"
 local p_mark="%B%(!,#,>)%b"
-PROMPT=" $p_cdir"$'\n'"$p_info $p_mark "
 ## gitの情報を表示
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%r)-[%b]'
@@ -112,7 +110,8 @@ precmd () {
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-RPROMPT="%1(v|%F{green}%1v%f|)"
+local p_vcs="%1(v|%F{green}%1v%f|)"
+PROMPT="$p_cdir $p_vcs"$'\n'"$p_mark "
 
 autoload -Uz add-zsh-hook
 autoload -Uz chpwd_recent_dirs cdr
