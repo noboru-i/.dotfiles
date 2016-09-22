@@ -72,3 +72,5 @@ brew cask install licecap
 
 brew cleanup
 brew cask cleanup
+
+mas upgrade
