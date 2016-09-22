@@ -9,13 +9,6 @@ eval "$(rbenv init -)"
 export PYENV_ROOT=/usr/local/opt/pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-## plenv
-eval "$(plenv init -)"
-export PERL_LOCAL_LIB_ROOT="/Users/`whoami`/perl5:$PERL_LOCAL_LIB_ROOT";
-export PERL_MB_OPT="--install_base "/Users/`whoami`/perl5"";
-export PERL_MM_OPT="INSTALL_BASE=/Users/`whoami`/perl5";
-export PERL5LIB="/Users/`whoami`/perl5/lib/perl5:$PERL5LIB";
-export PATH="/Users/`whoami`/perl5/bin:$PATH";
 ## go
 export GOPATH=$HOME/.go
 export PATH=$PATH:$HOME/.go/bin
