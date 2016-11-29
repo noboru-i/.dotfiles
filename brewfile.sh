@@ -51,11 +51,10 @@ brew cask install alfred
 brew cask install imageoptim
 brew cask install google-japanese-ime
 
-brew cask install google-chrome-beta
+brew cask install google-chrome
 
 brew cask install virtualbox
 brew cask install vagrant
-brew cask install dockertoolbox
 
 brew cask install atom
 brew cask install iterm2
@@ -72,7 +71,7 @@ brew cask install clipy
 
 brew cask install chatwork
 
-brew cask install licecap
+brew cask install slack
 
 brew cleanup
 brew cask cleanup
