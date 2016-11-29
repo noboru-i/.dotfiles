@@ -2,6 +2,7 @@
 ## nodebrew
 export PATH=~/.nodebrew/current/bin:$PATH
 nodebrew use stable > /dev/null
+export PATH="$PATH:`yarn global bin`"
 ## rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -21,6 +22,8 @@ JAVA8_HOME=`/usr/libexec/java_home -v "1.8" -F`
 if [ $? -eq 0 ]; then
     export JAVA8_HOME
 fi
+## PHP
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 
 # 色を使用出来るようにする
 autoload -Uz colors

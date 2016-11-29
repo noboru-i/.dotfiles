@@ -27,12 +27,16 @@ brew install ghq
 brew install rbenv
 brew install ruby-build
 brew install nodebrew
+brew install yarn
 brew install pyenv-virtualenv
+brew install homebrew/php/php70
 
 brew install Caskroom/cask/xquartz
 brew install colordiff
 
 brew install terraform
+
+brew install mitmproxy
 
 brew install mas
 
@@ -72,5 +76,3 @@ brew cask install licecap
 
 brew cleanup
 brew cask cleanup
-
-mas upgrade
