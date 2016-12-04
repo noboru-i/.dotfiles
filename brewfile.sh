@@ -5,7 +5,6 @@ brew tap homebrew/versions
 brew tap homebrew/binary
 brew tap sanemat/font
 brew tap caskroom/cask
-brew upgrade brew-cask
 
 brew install automake
 brew install gcc
