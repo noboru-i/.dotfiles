@@ -30,6 +30,8 @@ brew install yarn
 brew install pyenv-virtualenv
 brew install homebrew/php/php70
 
+brew install swiftlint
+
 brew install Caskroom/cask/xquartz
 brew install colordiff
 
@@ -71,6 +73,8 @@ brew cask install clipy
 brew cask install chatwork
 
 brew cask install slack
+
+brew cask install docker
 
 brew cleanup
 brew cask cleanup
