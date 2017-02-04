@@ -16,8 +16,8 @@ export PATH=$PATH:$HOME/.go/bin
 ## その他のコマンド
 export PATH=~/bin:$PATH
 ## Android
-export PATH=~/android-sdks/tools:$PATH
-export PATH=~/android-sdks/platform-tools:$PATH
+export PATH=~/Library/Android/sdk/tools:$PATH
+export PATH=~/Library/Android/sdk/platform-tools:$PATH
 JAVA8_HOME=`/usr/libexec/java_home -v "1.8" -F`
 if [ $? -eq 0 ]; then
     export JAVA8_HOME
