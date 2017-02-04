@@ -37,6 +37,8 @@ brew install colordiff
 
 brew install terraform
 
+brew install heroku-toolbelt
+
 brew install mitmproxy
 
 brew install mas
