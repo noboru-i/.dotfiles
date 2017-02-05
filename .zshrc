@@ -32,28 +32,8 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 # diffに色を付ける
 export LESS="-R"
 
-# ファイル補完候補に色を付ける
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# 補完関数の表示を強化する
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
-zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
-zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$DEFAULT
-zstyle ':completion:*:descriptions' format '%F{YELLOW}completing %B%d%b'$DEFAULT
-zstyle ':completion:*:options' description 'yes'
-zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
-# マッチ種別を別々に表示
-zstyle ':completion:*' group-name ''
-# hub completions
-fpath=(~/.zsh/completions $fpath)
 # 補完機能を有効にする
 autoload -U compinit && compinit -C
-
-# Ctrl+wで"/"までを消す
-autoload -Uz select-word-style
-select-word-style default
-zstyle ':zle:*' word-chars " /=;@:{},|"
-zstyle ':zle:*' word-style unspecified
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -82,9 +62,6 @@ autoload -Uz add-zsh-hook
 autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 200
-export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
-export NOTIFY_COMMAND_COMPLETE_TIMEOUT=5
-source ~/.zsh/zsh-notify/notify.plugin.zsh
 
 # peco
 for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
@@ -97,19 +74,21 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# Antigen
-if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
-    source $HOME/.zsh/antigen/antigen.zsh
-    antigen bundle zsh-users/zsh-syntax-highlighting
-    antigen bundle zsh-users/zsh-completions src
-    antigen apply
-fi
-
 # load
 for f in ~/.zsh/[0-9]*.(sh|zsh)
 do
     source "$f"
 done
+
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-completions"
+
+zplug "marzocchi/zsh-notify"
+export SYS_NOTIFIER=`which terminal-notifier`
+export NOTIFY_COMMAND_COMPLETE_TIMEOUT=5
 
 # docker-machine
 if [ "`docker-machine status default`" = "Running" ]; then

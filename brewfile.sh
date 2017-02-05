@@ -22,6 +22,7 @@ brew install --HEAD hub
 brew install carthage
 brew install peco
 brew install ghq
+brew install zplug
 
 brew install rbenv
 brew install ruby-build
