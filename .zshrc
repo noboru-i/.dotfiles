@@ -89,14 +89,3 @@ zplug "zsh-users/zsh-completions"
 zplug "marzocchi/zsh-notify"
 export SYS_NOTIFIER=`which terminal-notifier`
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=5
-
-# docker-machine
-if [ "`docker-machine status default`" = "Running" ]; then
-   eval "$(docker-machine env default)"
-fi
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/ishikuranoboru/Downloads/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/Users/ishikuranoboru/Downloads/google-cloud-sdk/completion.zsh.inc'
