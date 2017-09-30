@@ -1,8 +1,6 @@
 brew update
 brew upgrade
 
-brew tap homebrew/versions
-brew tap homebrew/binary
 brew tap sanemat/font
 brew tap caskroom/cask
 
