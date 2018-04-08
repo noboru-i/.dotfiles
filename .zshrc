@@ -16,12 +16,14 @@ export PATH=$PATH:$HOME/.go/bin
 ## その他のコマンド
 export PATH=~/bin:$PATH
 ## Android
+export ANDROID_HOME=~/Library/Android/sdk
 export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
-JAVA8_HOME=`/usr/libexec/java_home -v "1.8" -F`
+JAVA9_HOME=`/usr/libexec/java_home -v "9" -F`
 if [ $? -eq 0 ]; then
-    export JAVA8_HOME
+    export JAVA9_HOME
 fi
+export JAVA_HOME=`/usr/libexec/java_home -v "1.8" -F`
 ## PHP
 export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 
@@ -74,12 +76,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# load
-for f in ~/.zsh/[0-9]*.(sh|zsh)
-do
-    source "$f"
-done
-
 # zplug
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
@@ -89,3 +85,9 @@ zplug "zsh-users/zsh-completions"
 zplug "marzocchi/zsh-notify"
 export SYS_NOTIFIER=`which terminal-notifier`
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=5
+
+# load
+for f in ~/.zsh/[0-9]*.(sh|zsh)
+do
+    source "$f"
+done
