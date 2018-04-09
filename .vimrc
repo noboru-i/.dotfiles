@@ -7,16 +7,6 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" ヤンク履歴
-NeoBundle 'YankRing.vim'
-
-" coffeescript syntax
-NeoBundle 'kchmck/vim-coffee-script'
-" indentの深さに色を付ける
-NeoBundle 'nathanaelkane/vim-indent-guides'
-" emmet
-NeoBundle 'mattn/emmet-vim'
-
 filetype plugin indent on
 NeoBundleCheck
 
@@ -70,26 +60,9 @@ if has("mouse")
     set mouse=a
 endif
 
-"" vim-coffee-script
-"" vimにcoffeeファイルタイプを認識させる
-au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 "" インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
-
-"" indent_guides
-"" インデントの深さに色を付ける
-let g:indent_guides_start_level=2
-let g:indent_guides_auto_colors=0
-let g:indent_guides_enable_on_vim_startup=0
-let g:indent_guides_color_change_percent=20
-let g:indent_guides_guide_size=1
-let g:indent_guides_space_guides=1
-hi IndentGuidesOdd  ctermbg=235
-hi IndentGuidesEven ctermbg=237
-au FileType coffee,ruby,javascript,python IndentGuidesEnable
-nmap <silent><Leader>ig <Plug>IndentGuidesToggle
 
 "" YankRing.vim
 " , y でヤンク履歴
 nmap ,y :YRShow<CR>
-
