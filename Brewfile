@@ -57,6 +57,7 @@ cask "skype"
 cask "slack"
 cask "vagrant"
 cask "zoomus"
+cask "virtualbox"
 mas "1Password", id: 443987910
 mas "Display Menu", id: 549083868
 mas "iMovie", id: 408981434
