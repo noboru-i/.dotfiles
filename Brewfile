@@ -56,6 +56,7 @@ cask "skitch"
 cask "skype"
 cask "slack"
 cask "vagrant"
+cask "zoomus"
 mas "1Password", id: 443987910
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
