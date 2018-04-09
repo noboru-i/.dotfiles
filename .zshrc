@@ -19,10 +19,6 @@ export PATH=~/bin:$PATH
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
-JAVA9_HOME=`/usr/libexec/java_home -v "9" -F`
-if [ $? -eq 0 ]; then
-    export JAVA9_HOME
-fi
 export JAVA_HOME=`/usr/libexec/java_home -v "1.8" -F`
 ## PHP
 export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
