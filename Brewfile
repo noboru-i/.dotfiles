@@ -57,6 +57,7 @@ cask "skype"
 cask "slack"
 cask "vagrant"
 cask "virtualbox"
+cask "visual-studio-code"
 cask "zoomus"
 cask "caskroom/versions/java8"
 mas "1Password", id: 443987910
