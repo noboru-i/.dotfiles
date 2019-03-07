@@ -15,6 +15,8 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$HOME/.go/bin
 ## その他のコマンド
 export PATH=~/bin:$PATH
+export PATH=~/bin/google-cloud-sdk/bin:$PATH
+export PATH=~/bin/flutter/bin:$PATH
 ## Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=~/Library/Android/sdk/tools:$PATH
