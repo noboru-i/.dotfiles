@@ -13,6 +13,7 @@ eval "$(pyenv init -)"
 ## go
 export GOPATH=$HOME/.go
 export PATH=$PATH:$HOME/.go/bin
+eval "$(goenv init -)"
 ## その他のコマンド
 export PATH=~/bin:$PATH
 export PATH=~/bin/google-cloud-sdk/bin:$PATH
