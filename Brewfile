@@ -14,6 +14,7 @@ brew "gcc"
 brew "ghq"
 brew "git"
 brew "go"
+brew "goenv"
 brew "graphviz"
 brew "hub"
 brew "jq"
@@ -59,7 +60,6 @@ cask "virtualbox"
 cask "visual-studio-code"
 cask "zeplin"
 cask "zoomus"
-cask "caskroom/versions/java8"
 mas "1Password", id: 443987910
 mas "Display Menu", id: 549083868
 mas "Keynote", id: 409183694
