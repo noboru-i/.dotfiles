@@ -42,8 +42,6 @@ cask "android-studio"
 cask "arduino"
 cask "atom"
 cask "boostnote"
-cask "chatwork"
-cask "clipy"
 cask "docker"
 cask "dropbox"
 cask "evernote"
@@ -64,8 +62,6 @@ cask "zoomus"
 cask "caskroom/versions/java8"
 mas "1Password", id: 443987910
 mas "Display Menu", id: 549083868
-mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
-mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
