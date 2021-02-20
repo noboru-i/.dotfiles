@@ -63,6 +63,9 @@ zplug "marzocchi/zsh-notify"
 export SYS_NOTIFIER=`which terminal-notifier`
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=5
 
+if ! zplug check; then
+    zplug install
+fi
 zplug load
 
 # load

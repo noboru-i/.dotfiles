@@ -15,6 +15,4 @@ do
   ln -s ~/.dotfiles/$i ~/
 done
 
-zplug install
-
 popd
