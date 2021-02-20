@@ -63,6 +63,8 @@ zplug "marzocchi/zsh-notify"
 export SYS_NOTIFIER=`which terminal-notifier`
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=5
 
+zplug load
+
 # load
 for f in ~/.zsh/[0-9]*.(sh|zsh)
 do
