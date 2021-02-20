@@ -1,20 +1,7 @@
-# パスの指定
-## nodebrew
-export PATH=~/.nodebrew/current/bin:$PATH
-nodebrew use stable > /dev/null
-export PATH="$PATH:`yarn global bin`"
-## rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-## pyenv
-export PYENV_ROOT=/usr/local/opt/pyenv
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-## go
-export GOPATH=$HOME/.go
-export PATH=$PATH:$HOME/.go/bin
-eval "$(goenv init -)"
-## その他のコマンド
+# Configure path
+## asdf
+. /usr/local/opt/asdf/asdf.sh
+## Other commands
 export PATH=~/bin:$PATH
 export PATH=~/bin/google-cloud-sdk/bin:$PATH
 export PATH=~/bin/flutter/bin:$PATH
@@ -62,16 +49,9 @@ autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 200
 
-# peco
-for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
-bindkey '^]' peco-src
-bindkey '^r' peco-select-history
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+## fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+for f (~/.zsh/fzf-sources/*) source "${f}"
 
 # zplug
 export ZPLUG_HOME=/usr/local/opt/zplug
@@ -88,3 +68,4 @@ for f in ~/.zsh/[0-9]*.(sh|zsh)
 do
     source "$f"
 done
+
