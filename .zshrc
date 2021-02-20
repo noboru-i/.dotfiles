@@ -58,15 +58,20 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
-
 zplug "marzocchi/zsh-notify"
-export SYS_NOTIFIER=`which terminal-notifier`
-export NOTIFY_COMMAND_COMPLETE_TIMEOUT=5
 
 if ! zplug check; then
     zplug install
 fi
 zplug load
+
+## config for zsh-notify
+zstyle ':notify:*' error-title "❗️ Failed (in #{time_elapsed} seconds)"
+zstyle ':notify:*' success-title "🎉 Succeeded (in #{time_elapsed} seconds)"
+zstyle ':notify:*' error-sound "Glass"
+zstyle ':notify:*' success-sound "default"
+zstyle ':notify:*' command-complete-timeout 5
+zstyle ':notify:*' always-check-active-window yes
 
 # load
 for f in ~/.zsh/[0-9]*.(sh|zsh)
