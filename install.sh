@@ -15,4 +15,6 @@ do
   ln -s ~/.dotfiles/$i ~/
 done
 
+asdf install
+
 popd
