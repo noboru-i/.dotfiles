@@ -15,6 +15,7 @@ do
   ln -s ~/.dotfiles/$i ~/
 done
 
+brew bundle
 asdf install
 
 popd

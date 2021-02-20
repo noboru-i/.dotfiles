@@ -19,6 +19,8 @@ brew "gcc"
 brew "gh"
 brew "ghq"
 brew "git"
+brew "unbound", link: false
+brew "gnupg"
 brew "gobject-introspection"
 brew "jq"
 brew "libpq"
