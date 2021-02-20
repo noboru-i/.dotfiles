@@ -1,15 +1,5 @@
 set nocompatible " vi互換をOFF
 
-" NeoBundle
-if has('vim_starting')
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#rc(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-filetype plugin indent on
-NeoBundleCheck
-
 "" Encoding
 set encoding=UTF-8 "文字コードをUTF-8にする
 set fileencoding=UTF-8 "文字コードをUTF-8にする
