@@ -45,7 +45,7 @@ cask "skitch"
 cask "slack"
 cask "visual-studio-code"
 cask "xquartz"
-cask "zoomus"
+cask "zoom"
 mas "1Password", id: 443987910
 mas "Apple Configurator 2", id: 1037126344
 mas "Display Menu", id: 549083868
