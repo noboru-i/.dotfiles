@@ -10,6 +10,7 @@ do
   [ $i = ".git" ] && continue
   [ $i = ".gitignore" ] && continue
   [ $i = ".gitmodules" ] && continue
+  [ $i = "docs" ] && continue
   [ $i = "README.md" ] && continue
   ! [[ -e ~/$i ]] || mv ~/$i ~/$i.back.`date +%s`
   ln -s ~/.dotfiles/$i ~/

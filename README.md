@@ -8,7 +8,6 @@
 curl https://raw.githubusercontent.com/noboru-i/.dotfiles/master/install.sh | sh
 ```
 
-### Install apps
+### Setup macbook
 
-install Homebrew.
-http://brew.sh/index_ja.html
+[docs/macbook_setup.md](docs/macbook_setup.md)
