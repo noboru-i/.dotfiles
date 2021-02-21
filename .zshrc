@@ -1,10 +1,6 @@
 # Configure path
 ## asdf
 . /usr/local/opt/asdf/asdf.sh
-## Other commands
-export PATH=~/bin:$PATH
-export PATH=~/bin/google-cloud-sdk/bin:$PATH
-export PATH=~/bin/flutter/bin:$PATH
 ## Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=~/Library/Android/sdk/tools:$PATH
@@ -52,12 +48,14 @@ zstyle ':chpwd:*' recent-dirs-max 200
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 for f (~/.zsh/fzf-sources/*) source "${f}"
+export FZF_DEFAULT_OPTS='--height 80% --layout=reverse'
 
 # zplug
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
 zplug "marzocchi/zsh-notify"
 
 if ! zplug check; then

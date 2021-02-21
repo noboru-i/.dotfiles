@@ -18,4 +18,7 @@ done
 brew bundle
 asdf install
 
+## Flutter
+flutter doctor
+
 popd

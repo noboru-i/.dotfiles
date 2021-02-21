@@ -12,9 +12,3 @@ curl https://raw.githubusercontent.com/noboru-i/.dotfiles/master/install.sh | sh
 
 install Homebrew.
 http://brew.sh/index_ja.html
-
-install applications.
-
-```
-brew bundle
-```
