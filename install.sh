@@ -18,6 +18,9 @@ done
 ## applications
 brew bundle
 
+### Setup gh
+gh alias set browse 'repo view -w'
+
 ## asdf
 for plugin in $(cat .tool-versions | sed s/' .*$'//); do
   asdf plugin-list | grep $plugin > /dev/null 2>&1
