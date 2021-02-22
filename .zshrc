@@ -1,11 +1,12 @@
 # Configure path
+eval $(/opt/homebrew/bin/brew shellenv)
 ## asdf
-. /usr/local/opt/asdf/asdf.sh
+. $(brew --prefix asdf)/asdf.sh
 ## Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
-export JAVA_HOME=`/usr/libexec/java_home -v "1.8" -F`
+export JAVA_HOME=`/usr/libexec/java_home -v "16" -F`
 
 # 色を使用出来るようにする
 autoload -Uz colors && colors
@@ -51,7 +52,7 @@ for f (~/.zsh/fzf-sources/*) source "${f}"
 export FZF_DEFAULT_OPTS='--height 80% --layout=reverse'
 
 # zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=$(brew --prefix zplug)
 source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
