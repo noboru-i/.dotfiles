@@ -6,7 +6,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
-export JAVA_HOME=`/usr/libexec/java_home -v "16" -F`
+export JAVA_HOME=`/usr/libexec/java_home -v "1.8" -F`
 
 # 色を使用出来るようにする
 autoload -Uz colors && colors
