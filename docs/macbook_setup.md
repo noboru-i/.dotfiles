@@ -45,8 +45,17 @@ https://brew.sh/index_ja.html に記載のあるインストールスクリプ�
 
 ## その他アプリの設定
 
+### Alfred
+
+- General -> Alfred Hotkey -> ^ + Space
+- Features -> Clipboard History ->
+    - Clipboard History -> Keep Plain Text -> On and 3 Months
+    - Viewer Hotkey -> Shift + Command + V
+
 ### 1Password
 
+- 環境設定 -> 一般 -> 1Password mini を常に実行し続ける -> ON
+- 環境設定 -> 一般 -> リッチアイコンを使用 -> ON
 - 環境設定 -> セキュリティ -> Touch IDで1Passwordをロック解除することを許可
 - 環境設定 -> セキュリティ -> マスターパスワードを次の期間ごとに要求 -> 最大（2 weeks）
 
