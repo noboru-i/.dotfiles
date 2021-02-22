@@ -26,6 +26,7 @@
 [user]
   name = noboru-i
   email = ishikura.noboru@gmail.com
+	signingkey = 984D25381797E999
 
 [push]
   default = current
