@@ -33,8 +33,7 @@
   prune = true
 
 [ghq]
-  root = ~/.go/src
-  root = ~/.ghq
+  root = ~/ghq
 
 [filter "media"]
   clean = git-media-clean %f
