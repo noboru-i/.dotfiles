@@ -74,3 +74,10 @@ Android SDK や Platform tools をインストール
 https://flutter.dev/docs/get-started/install/macos
 
 `~/bin` にインストール
+
+**For M1 Mac**
+
+```
+arch -x86_64 sudo gem install ffi
+sudo gem install cocoapods
+```
