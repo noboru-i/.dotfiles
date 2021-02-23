@@ -68,3 +68,9 @@ https://brew.sh/index_ja.html に記載のあるインストールスクリプ�
 ### Android Studio
 
 Android SDK や Platform tools をインストール
+
+### Flutter
+
+https://flutter.dev/docs/get-started/install/macos
+
+`~/bin` にインストール

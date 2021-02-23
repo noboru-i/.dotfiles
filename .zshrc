@@ -4,10 +4,12 @@ if [ -e /opt/homebrew/bin/brew ]; then
 fi
 ## asdf
 . $(brew --prefix asdf)/asdf.sh
+## Flutter
+export PATH=$PATH:~/bin/flutter/bin
 ## Android
 export ANDROID_HOME=~/Library/Android/sdk
-export PATH=~/Library/Android/sdk/tools:$PATH
-export PATH=~/Library/Android/sdk/platform-tools:$PATH
+export PATH=$PATH:~/Library/Android/sdk/tools
+export PATH=$PATH:~/Library/Android/sdk/platform-tools
 export JAVA_HOME=`/usr/libexec/java_home -v "1.8" -F`
 
 # 色を使用出来るようにする
