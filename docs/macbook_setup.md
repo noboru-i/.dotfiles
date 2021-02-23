@@ -61,9 +61,18 @@ https://brew.sh/index_ja.html に記載のあるインストールスクリプ�
 - 環境設定 -> セキュリティ -> Touch IDで1Passwordをロック解除することを許可
 - 環境設定 -> セキュリティ -> マスターパスワードを次の期間ごとに要求 -> 最大（2 weeks）
 
+### iTerm2
+
+- Preferences -> Profiles -> Colors -> Color Presets -> Light Background
+- Preferences -> Profiles -> Text -> Font -> Ricty Diminished
+
 ### GitHub
 
 `gh auth login` を実行する
+
+### Visual Studio Code
+
+- Preferences: Color Theme -> Light (Visual Studio)
 
 ### Android Studio
 
