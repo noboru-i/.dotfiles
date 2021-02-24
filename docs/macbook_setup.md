@@ -78,11 +78,7 @@ https://brew.sh/index_ja.html に記載のあるインストールスクリプ�
 
 Android SDK や Platform tools をインストール
 
-### Flutter
-
-https://flutter.dev/docs/get-started/install/macos
-
-`~/bin` にインストール
+### Cocoapods
 
 **For M1 Mac**
 
