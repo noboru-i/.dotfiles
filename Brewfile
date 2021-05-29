@@ -46,6 +46,7 @@ cask "google-chrome"
 cask "google-japanese-ime"
 cask "imageoptim"
 cask "iterm2"
+cask "notion"
 cask "skitch"
 cask "slack"
 cask "visual-studio-code"
@@ -56,4 +57,5 @@ mas "Apple Configurator 2", id: 1037126344
 mas "Display Menu", id: 549083868
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
+mas "Twitter", id: 1482454543
 mas "Xcode", id: 497799835
