@@ -6,11 +6,18 @@ fi
 . $(brew --prefix asdf)/asdf.sh
 ## Flutter
 export PATH=$PATH:~/bin/flutter/bin
+## Dart tool
+export PATH=$PATH:$HOME/.pub-cache/bin
 ## Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/tools
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
 export JAVA_HOME=`/usr/libexec/java_home -v "1.8" -F`
+## gcloud
+source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+## Monarch
+export PATH=$PATH:$HOME/bin/monarch/bin
 
 # 色を使用出来るようにする
 autoload -Uz colors && colors
