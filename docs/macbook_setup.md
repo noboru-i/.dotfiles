@@ -38,6 +38,10 @@
 - スクロールの方向:ナチュラル -> OFF
 - その他のジェスチャ -> アプリケーションExpose -> ON
 
+### 共有
+
+- AirPlayレシーバー -> OFF (5000番ポートの利用を停止)
+
 ## GitHubの設定
 
 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
