@@ -103,3 +103,9 @@ Android SDK や Platform tools をインストール
 arch -x86_64 sudo gem install ffi
 sudo gem install cocoapods
 ```
+
+↓
+
+```
+brew install cocoapods
+```
