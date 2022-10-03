@@ -1,4 +1,5 @@
-ruby 3.1.1
-nodejs 17.5.0
-flutter 2.10.2-stable
+ruby 3.1.2
+nodejs 16.15.1
+flutter 3.0.5-stable
 golang 1.17.7
+python 2.7.18
