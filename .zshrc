@@ -5,7 +5,6 @@ fi
 ## asdf
 . $(brew --prefix asdf)/asdf.sh
 ## Flutter
-export PATH=$PATH:~/bin/flutter/bin
 export FLUTTER_ROOT="$(asdf where flutter)"
 ## Dart tool
 export PATH=$PATH:$HOME/.pub-cache/bin
