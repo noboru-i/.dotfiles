@@ -3,7 +3,7 @@ if [ -e /opt/homebrew/bin/brew ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
 ## asdf
-. $(brew --prefix asdf)/asdf.sh
+. $(brew --prefix asdf)/libexec/asdf.sh
 ## Flutter
 export FLUTTER_ROOT="$(asdf where flutter)"
 ## Dart tool
