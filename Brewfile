@@ -57,7 +57,6 @@ cask "slack"
 cask "visual-studio-code"
 cask "xquartz"
 cask "zoom"
-mas "1Password 7", id: 1333542190
 mas "Apple Configurator 2", id: 1037126344
 mas "Display Menu", id: 549083868
 mas "Keynote", id: 409183694
