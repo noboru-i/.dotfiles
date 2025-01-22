@@ -14,10 +14,7 @@ export PATH="/opt/homebrew/opt/openjdk@20/bin:$PATH"
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/tools
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
-export JAVA_HOME=`/usr/libexec/java_home -v "20" -F`
-## gcloud
-source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+export JAVA_HOME=`/usr/libexec/java_home -v "21" -F`
 ## Monarch
 export PATH=$PATH:$HOME/bin/monarch/bin
 
@@ -91,3 +88,15 @@ do
     source "$f"
 done
 
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/noboruishikura/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
+
+CLOUDSDK_PYTHON=$(which python3)
