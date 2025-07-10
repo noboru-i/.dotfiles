@@ -13,3 +13,19 @@
 ```
 curl https://raw.githubusercontent.com/noboru-i/.dotfiles/master/install.sh | sh
 ```
+
+### Add/Update dotfiles
+
+```
+# Open by VS Code
+code ~/.local/share/chezmoi
+
+# Manage a new file with chezmoi
+chezmoi add ~/.bashrc
+
+# Check diff
+chezmoi diff
+
+# Apply to home directory
+chezmoi -v apply
+```
