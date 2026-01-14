@@ -3,7 +3,6 @@ set nocompatible " vi互換をOFF
 "" Encoding
 set encoding=UTF-8 "文字コードをUTF-8にする
 set fileencoding=UTF-8 "文字コードをUTF-8にする
-set termencoding=UTF-8 "文字コードをUTF-8にする
 
 "" File
 set noswapfile
@@ -50,9 +49,3 @@ if has("mouse")
     set mouse=a
 endif
 
-"" インデントを設定
-autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
-
-"" YankRing.vim
-" , y でヤンク履歴
-nmap ,y :YRShow<CR>
