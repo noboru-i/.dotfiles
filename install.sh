@@ -7,6 +7,9 @@ brew bundle
 chezmoi init https://github.com/noboru-i/.dotfiles.git
 chezmoi apply
 
+# Setup sheldon (zsh plugin manager)
+sheldon lock
+
 # Setup gh
 gh alias set browse 'repo view -w'
 
