@@ -5,20 +5,16 @@ fi
 ## asdf
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
 ## Flutter
-export PATH=$PATH:~/bin/flutter/bin
 export FLUTTER_ROOT="$(asdf where flutter)"
 ## Dart tool
 export PATH=$PATH:$HOME/.pub-cache/bin
 ## Java
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@20/bin:$PATH"
 ## Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/tools
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
-export JAVA_HOME=`/usr/libexec/java_home -v "17" -F`
-## gcloud
-# source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-# source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+export JAVA_HOME=`/usr/libexec/java_home -v "21" -F`
 ## Monarch
 # export PATH=$PATH:$HOME/bin/monarch/bin
 ## local bin
@@ -93,3 +89,15 @@ for f in ~/.zsh/[0-9]*.(sh|zsh)
 do
     source "$f"
 done
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/noboruishikura/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
+
+CLOUDSDK_PYTHON=$(which python3)
