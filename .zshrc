@@ -3,7 +3,7 @@ if [ -e /opt/homebrew/bin/brew ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
 ## asdf
-. $(brew --prefix asdf)/asdf.sh
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 ## Flutter
 export PATH=$PATH:~/bin/flutter/bin
 export FLUTTER_ROOT="$(asdf where flutter)"
@@ -17,10 +17,12 @@ export PATH=$PATH:~/Library/Android/sdk/tools
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
 export JAVA_HOME=`/usr/libexec/java_home -v "17" -F`
 ## gcloud
-source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+# source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+# source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 ## Monarch
-export PATH=$PATH:$HOME/bin/monarch/bin
+# export PATH=$PATH:$HOME/bin/monarch/bin
+## local bin
+export PATH="$HOME/.local/bin:$PATH"
 
 # 色を使用出来るようにする
 autoload -Uz colors && colors
@@ -91,4 +93,3 @@ for f in ~/.zsh/[0-9]*.(sh|zsh)
 do
     source "$f"
 done
-
