@@ -9,12 +9,12 @@ export FLUTTER_ROOT="$(asdf where flutter)"
 ## Dart tool
 export PATH=$PATH:$HOME/.pub-cache/bin
 ## Java
-export PATH="/opt/homebrew/opt/openjdk@20/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 ## Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/tools
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
-export JAVA_HOME=`/usr/libexec/java_home -v "21" -F`
+export JAVA_HOME=`/usr/libexec/java_home -v "25" -F`
 ## Monarch
 # export PATH=$PATH:$HOME/bin/monarch/bin
 ## local bin
