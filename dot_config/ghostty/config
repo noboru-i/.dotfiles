@@ -1,6 +1,6 @@
 font-family = "HackGen Console"
 font-size = 14
-font-thicken = true
+font-thicken = false
 font-feature = -dlig
 
 window-save-state = always
