@@ -3,7 +3,8 @@ if [ -e /opt/homebrew/bin/brew ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
 ## asdf
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 ## Flutter
 export FLUTTER_ROOT="$(asdf where flutter)"
 ## Dart tool
@@ -14,16 +15,14 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/tools
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
-export JAVA_HOME=`/usr/libexec/java_home -v "25" -F`
+export JAVA_HOME=$(/usr/libexec/java_home)
 ## Monarch
-# export PATH=$PATH:$HOME/bin/monarch/bin
+export PATH=$PATH:$HOME/bin/monarch/bin
 ## local bin
 export PATH="$HOME/.local/bin:$PATH"
 
 # 色を使用出来るようにする
 autoload -Uz colors && colors
-# LS_COLORSを設定しておく
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 # diffに色を付ける
 export LESS="-R"
 
