@@ -6,7 +6,6 @@ brew "jpeg-xl"
 brew "aom"
 brew "git"
 brew "asdf"
-brew "automake"
 brew "bat"
 brew "glib"
 brew "cairo"
@@ -64,7 +63,6 @@ cask "ghostty"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "iterm2"
-cask "miniforge"
 cask "notion"
 cask "obsidian"
 cask "openscad@snapshot"
@@ -75,10 +73,8 @@ cask "visual-studio-code"
 cask "visual-studio-code@insiders"
 cask "xquartz"
 cask "zoom"
-mas "Apple Configurator", id: 1037126344
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Numbers", id: 409203825
 mas "Transporter", id: 1450874784
-mas "Twitter", id: 1482454543
 mas "Xcode", id: 497799835
