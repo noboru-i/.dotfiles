@@ -35,6 +35,14 @@ curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 
 ### 適用
 
+**初回のみ** — `darwin-rebuild` はまだ存在しないため `nix run` でブートストラップする:
+
+```sh
+nix run nix-darwin -- switch --flake ~/.dotfiles
+```
+
+**2回目以降:**
+
 ```sh
 darwin-rebuild switch --flake ~/.dotfiles
 ```
