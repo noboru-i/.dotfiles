@@ -1,4 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }:
+let
+  dotfiles = "${config.home.homeDirectory}/.dotfiles";
+  link = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
+in
+{
   imports = [
     ./packages.nix
   ];
@@ -16,31 +21,31 @@
     '';
 
     # zsh 設定ファイル
-    ".zshrc".source                            = ../config/zsh/zshrc;
-    ".zsh/30_aliases.zsh".source               = ../config/zsh/30_aliases.zsh;
-    ".zsh/50_setopt.zsh".source                = ../config/zsh/50_setopt.zsh;
-    ".zsh/70_misc.zsh".source                  = ../config/zsh/70_misc.zsh;
-    ".zsh/fzf-sources/ghq-list.zsh".source     = ../config/zsh/fzf-sources/ghq-list.zsh;
-    ".zsh/fzf-sources/git.zsh".source          = ../config/zsh/fzf-sources/git.zsh;
-    ".fzf.zsh".source                          = ../config/fzf/fzf.zsh;
+    ".zshrc".source                            = link "config/zsh/zshrc";
+    ".zsh/30_aliases.zsh".source               = link "config/zsh/30_aliases.zsh";
+    ".zsh/50_setopt.zsh".source                = link "config/zsh/50_setopt.zsh";
+    ".zsh/70_misc.zsh".source                  = link "config/zsh/70_misc.zsh";
+    ".zsh/fzf-sources/ghq-list.zsh".source     = link "config/zsh/fzf-sources/ghq-list.zsh";
+    ".zsh/fzf-sources/git.zsh".source          = link "config/zsh/fzf-sources/git.zsh";
+    ".fzf.zsh".source                          = link "config/fzf/fzf.zsh";
 
     # git
-    ".gitconfig".source                        = ../config/git/config;
-    ".gitattributes".source                    = ../config/git/attributes;
-    ".gitignore-global".source                 = ../config/git/ignore;
+    ".gitconfig".source                        = link "config/git/config";
+    ".gitattributes".source                    = link "config/git/attributes";
+    ".gitignore-global".source                 = link "config/git/ignore";
 
     # vim
-    ".vimrc".source                            = ../config/vim/vimrc;
+    ".vimrc".source                            = link "config/vim/vimrc";
 
     # runtime versions
-    ".tool-versions".source                    = ../config/mise/tool-versions;
+    ".tool-versions".source                    = link "config/mise/tool-versions";
 
     # claude
-    ".claude/commands/create-pr.md".source     = ../config/claude/commands/create-pr.md;
+    ".claude/commands/create-pr.md".source     = link "config/claude/commands/create-pr.md";
   };
 
   xdg.configFile = {
-    "ghostty/config".source = ../config/ghostty/config;
-    "gh/config.yml".source  = ../config/gh/config.yml;
+    "ghostty/config".source = link "config/ghostty/config";
+    "gh/config.yml".source  = link "config/gh/config.yml";
   };
 }
