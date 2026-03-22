@@ -38,14 +38,22 @@ curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 **初回のみ** — `darwin-rebuild` はまだ存在しないため `nix run` でブートストラップする:
 
 ```sh
-nix run nix-darwin -- switch --flake ~/.dotfiles
+nix run nix-darwin -- --flake ~/.dotfiles switch
 ```
+
+> **Note:** nix-darwin は 2025年よりシステムアクティベーションに root 権限が必要になった。
+> 初回は上記コマンドを実行すると途中で sudo パスワードを求められる。
 
 **2回目以降:**
 
 ```sh
-darwin-rebuild switch --flake ~/.dotfiles
+sudo darwin-rebuild switch --flake ~/.dotfiles
 ```
+
+> **Note:** `sudo` で `darwin-rebuild: command not found` になる場合はフルパスで実行する:
+> ```sh
+> sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ~/.dotfiles
+> ```
 
 ## ツール管理
 
