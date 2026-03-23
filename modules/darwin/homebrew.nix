@@ -25,7 +25,6 @@
       "obsidian"
       "openscad@snapshot"
       "rancher"
-      "skitch"
       "slack"
       "visual-studio-code"
       "visual-studio-code@insiders"
