@@ -28,7 +28,6 @@
       "slack"
       "visual-studio-code"
       "visual-studio-code@insiders"
-      "xquartz"
       "zoom"
     ];
     masApps = {
