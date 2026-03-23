@@ -9,6 +9,7 @@
       "cocoapods"
     ];
     casks = [
+      "1password"
       "alfred"
       "android-studio"
       "bambu-studio"
