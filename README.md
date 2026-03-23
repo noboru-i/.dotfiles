@@ -47,7 +47,7 @@ curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 
 ### 適用
 
-**初回のみ** — `darwin-rebuild` はまだ存在しないため `nix run` でブートストラップする:
+**初回のみ** — `darwin-rebuild` はまだ存在しないため `nix run` でブートストラップする。途中で Homebrew のインストールを求めるプロンプトが表示された場合は、そのままインストールして問題ない（`homebrew.nix` で宣言された cask / MAS アプリの管理に必要なため）:
 
 ```sh
 sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles
