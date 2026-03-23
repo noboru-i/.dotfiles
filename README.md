@@ -5,10 +5,11 @@ nix-darwin + home-manager で管理する dotfiles。
 ## 構成
 
 - `flake.nix` — Nix flake エントリーポイント
-- `hosts/ishikuranoborunoMacBook-Air/` — nix-darwin のホスト設定
-  - `default.nix` — 基本設定
+- `modules/darwin/` — nix-darwin の共通設定
+  - `default.nix` — 基本設定（Nix, ユーザー, zsh, pam 等）
   - `homebrew.nix` — Homebrew (cask / MAS / brew)
   - `macos.nix` — macOS システム設定
+- `hosts/<hostname>/` — ホスト固有の設定（共通設定をimportし、差分を記述）
 - `home/` — home-manager 設定
   - `default.nix` — ファイル配置 (シンボリックリンク)
   - `packages.nix` — Nix パッケージ一覧
@@ -32,6 +33,17 @@ nix-darwin + home-manager で管理する dotfiles。
 ```sh
 curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 ```
+
+### 新しいホストの追加
+
+1. `hosts/<hostname>/default.nix` を作成し、共通設定をimport:
+   ```nix
+   { ... }: {
+     imports = [ ../../modules/darwin ];
+     # ホスト固有の設定があればここに追加
+   }
+   ```
+2. `flake.nix` の `hosts` リストにホスト名を追加
 
 ### 適用
 
