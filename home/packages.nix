@@ -17,6 +17,8 @@
     gnupg
 
     # Development
+    claude-code-bin
+    firebase-tools
     mise
     graphviz
     terminal-notifier

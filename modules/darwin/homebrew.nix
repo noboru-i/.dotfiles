@@ -21,7 +21,6 @@
       "ghostty"
       "google-chrome"
       "google-japanese-ime"
-      "iterm2"
       "notion"
       "obsidian"
       "openscad@snapshot"
