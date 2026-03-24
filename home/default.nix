@@ -22,12 +22,9 @@ in
 
     # zsh 設定ファイル
     ".zshrc".source                            = link "config/zsh/zshrc";
-    ".zsh/30_aliases.zsh".source               = link "config/zsh/30_aliases.zsh";
-    ".zsh/50_setopt.zsh".source                = link "config/zsh/50_setopt.zsh";
-    ".zsh/70_misc.zsh".source                  = link "config/zsh/70_misc.zsh";
+    ".zprofile".source                         = link "config/zsh/zprofile";
     ".zsh/fzf-sources/ghq-list.zsh".source     = link "config/zsh/fzf-sources/ghq-list.zsh";
     ".zsh/fzf-sources/git.zsh".source          = link "config/zsh/fzf-sources/git.zsh";
-    ".fzf.zsh".source                          = link "config/fzf/fzf.zsh";
 
     # git
     ".gitconfig".source                        = link "config/git/config";
