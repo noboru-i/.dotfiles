@@ -23,5 +23,10 @@
     trackpad = {
       Clicking = true;
     };
+    CustomUserPreferences = {
+      "com.apple.dock" = {
+        "expose-animation-duration" = 0.1;
+      };
+    };
   };
 }
