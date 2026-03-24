@@ -42,6 +42,7 @@ in
 
     # claude
     ".claude/commands/create-pr.md".source     = link "config/claude/commands/create-pr.md";
+    ".claude/settings.json".source             = link "config/claude/settings.json";
     ".claude/statusline-command.sh".source     = link "config/claude/statusline-command.sh";
   };
 
