@@ -5,23 +5,10 @@ nix-darwin + home-manager で管理する dotfiles。
 ## 構成
 
 - `flake.nix` — Nix flake エントリーポイント
-- `modules/darwin/` — nix-darwin の共通設定
-  - `default.nix` — 基本設定（Nix, ユーザー, zsh, pam 等）
-  - `homebrew.nix` — Homebrew (cask / MAS / brew)
-  - `macos.nix` — macOS システム設定
-- `hosts/<hostname>/` — ホスト固有の設定（共通設定をimportし、差分を記述）
-- `home/` — home-manager 設定
-  - `default.nix` — ファイル配置 (シンボリックリンク)
-  - `packages.nix` — Nix パッケージ一覧
-- `config/` — 実際の設定ファイル群 (直接編集可)
-  - `zsh/` — zsh 設定
-  - `git/` — git 設定
-  - `ghostty/` — Ghostty ターミナル設定
-  - `vim/` — vim 設定
-  - `fzf/` — fzf 設定
-  - `gh/` — GitHub CLI 設定
-  - `mise/` — mise (ランタイムバージョン管理)
-  - `claude/commands/` — Claude Code カスタムコマンド
+- `modules/darwin/` — nix-darwin の共通設定（Homebrew, macOS システム設定等）
+- `hosts/<hostname>/` — ホスト固有の設定
+- `home/` — home-manager 設定（パッケージ, シンボリックリンク）
+- `config/` — 実際の設定ファイル群（zsh, git, vim 等、直接編集可）
 
 ## セットアップ
 
@@ -32,6 +19,12 @@ nix-darwin + home-manager で管理する dotfiles。
 
 ```sh
 curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+```
+
+### リポジトリのクローン
+
+```sh
+git clone https://github.com/noboru-i/.dotfiles.git ~/.dotfiles
 ```
 
 ### 新しいホストの追加
