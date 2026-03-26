@@ -14,6 +14,7 @@
       "android-studio"
       "bambu-studio"
       "claude"
+      "discord"
       "dropbox"
       "font-hack-nerd-font"
       "font-hackgen"
