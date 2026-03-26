@@ -27,17 +27,16 @@
 
   environment.systemPackages = with pkgs; [];
 
-  system.activationScripts.removeAppleApps = {
-    text = ''
-      for app in \
-        "/Applications/GarageBand.app" \
-        "/Applications/iMovie.app"; do
-        if [ -d "$app" ]; then
-          rm -rf "$app"
-        fi
-      done
-    '';
-  };
+  system.activationScripts.postActivation.text = ''
+    for app in \
+      "/Applications/GarageBand.app" \
+      "/Applications/iMovie.app"; do
+      if [ -d "$app" ]; then
+        rm -rf "$app"
+        echo "Removed $app"
+      fi
+    done
+  '';
 
   system.stateVersion = 5;
 }
