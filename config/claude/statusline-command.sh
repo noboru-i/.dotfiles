@@ -118,6 +118,7 @@ format_7d_reset() {
 }
 
 if [ -n "$five_util" ]; then
+  # ── Subscription mode: 5h/7d rate limit bars ──
   printf -v five_int "%.0f" "$five_util" 2>/dev/null || five_int="${five_util%%.*}"
   five_color=$(gradient_color "$five_int")
   five_bar=$(progress_bar "$five_int" "$five_color")
@@ -127,17 +128,24 @@ if [ -n "$five_util" ]; then
     five_reset_str=$(format_5h_reset "$five_reset")
     [ -n "$five_reset_str" ] && line2+=" ${GRAY}${five_reset_str}${RESET}"
   fi
-fi
 
-if [ -n "$seven_util" ]; then
-  printf -v seven_int "%.0f" "$seven_util" 2>/dev/null || seven_int="${seven_util%%.*}"
-  seven_color=$(gradient_color "$seven_int")
-  seven_bar=$(progress_bar "$seven_int" "$seven_color")
-  printf -v seven_pct "%3d" "$seven_int"
-  line3="${seven_color}📅 7d ${RESET} ${seven_bar} ${seven_color}${seven_pct}%${RESET}"
-  if [ -n "$seven_reset" ]; then
-    seven_reset_str=$(format_7d_reset "$seven_reset")
-    [ -n "$seven_reset_str" ] && line3+=" ${GRAY}${seven_reset_str}${RESET}"
+  if [ -n "$seven_util" ]; then
+    printf -v seven_int "%.0f" "$seven_util" 2>/dev/null || seven_int="${seven_util%%.*}"
+    seven_color=$(gradient_color "$seven_int")
+    seven_bar=$(progress_bar "$seven_int" "$seven_color")
+    printf -v seven_pct "%3d" "$seven_int"
+    line3="${seven_color}📅 7d ${RESET} ${seven_bar} ${seven_color}${seven_pct}%${RESET}"
+    if [ -n "$seven_reset" ]; then
+      seven_reset_str=$(format_7d_reset "$seven_reset")
+      [ -n "$seven_reset_str" ] && line3+=" ${GRAY}${seven_reset_str}${RESET}"
+    fi
+  fi
+else
+  # ── API key mode: session cost ──
+  session_cost=$(echo "$input" | jq -r '.cost_usd // empty' 2>/dev/null)
+  if [ -n "$session_cost" ]; then
+    cost_fmt=$(awk -v c="$session_cost" 'BEGIN { printf "$%.4f", c }')
+    line2="${GRAY}💰 Session${RESET} ${cost_fmt}"
   fi
 fi
 
