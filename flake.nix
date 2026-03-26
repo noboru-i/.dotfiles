@@ -16,7 +16,7 @@
   outputs = { self, nixpkgs, nix-darwin, home-manager, ... }:
     let
       hosts = [
-        "ishikuranoborunoMacBook-Air"
+        "NI-Air-2020"
         "NI-Air-2026"
       ];
       mkDarwin = hostname: {
