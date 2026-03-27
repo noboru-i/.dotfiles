@@ -142,7 +142,7 @@ if [ -n "$five_util" ]; then
   fi
 else
   # ── API key mode: session cost ──
-  session_cost=$(echo "$input" | jq -r '.cost_usd // empty' 2>/dev/null)
+  session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty' 2>/dev/null)
   if [ -n "$session_cost" ]; then
     cost_fmt=$(awk -v c="$session_cost" 'BEGIN { printf "$%.4f", c }')
     line2="${GRAY}💰 Session${RESET} ${cost_fmt}"
