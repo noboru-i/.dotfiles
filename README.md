@@ -21,6 +21,12 @@ nix-darwin + home-manager で管理する dotfiles。
 curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 ```
 
+### Xcode Command Line Tools のインストール
+
+```sh
+xcode-select --install
+```
+
 ### リポジトリのクローン
 
 ```sh
