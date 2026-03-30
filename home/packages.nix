@@ -17,6 +17,8 @@
     gnupg
 
     # Development
+    ollama
+    uv
     claude-code-bin
     firebase-tools
     mise
