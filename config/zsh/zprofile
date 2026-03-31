@@ -9,6 +9,11 @@ export PATH="$HOME/.nix-profile/bin:/run/current-system/sw/bin:$PATH"
 # Rancher Desktop
 export PATH="$HOME/.rd/bin:$PATH"
 
+# Flutter (mise-managed) — VS Code reads zprofile but not zshrc on startup
+if command -v mise &>/dev/null; then
+  export FLUTTER_ROOT="$(mise where flutter 2>/dev/null)"
+fi
+
 # Dart tool
 export PATH="$PATH:$HOME/.pub-cache/bin"
 # Java (Nix-managed JDK)
