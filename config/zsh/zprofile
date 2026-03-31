@@ -7,22 +7,19 @@ fi
 export PATH="$HOME/.nix-profile/bin:/run/current-system/sw/bin:$PATH"
 
 # Rancher Desktop
-export PATH="/Users/noboruishikura/.rd/bin:$PATH"
+export PATH="$HOME/.rd/bin:$PATH"
 
-# mise (runtime version manager)
-eval "$(mise activate zsh)"
-
-# Flutter
-export FLUTTER_ROOT="$(mise where flutter 2>/dev/null)"
 # Dart tool
-export PATH=$PATH:$HOME/.pub-cache/bin
+export PATH="$PATH:$HOME/.pub-cache/bin"
 # Java
-export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
-export PATH="${JAVA_HOME}/bin:$PATH"
+if JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null); then
+  export JAVA_HOME
+  export PATH="${JAVA_HOME}/bin:$PATH"
+fi
 # Android
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=$PATH:~/Library/Android/sdk/cmdline-tools/latest/bin
-export PATH=$PATH:~/Library/Android/sdk/platform-tools
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$HOME/Library/Android/sdk/cmdline-tools/latest/bin"
+export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 # Local bin
 export PATH="$HOME/.local/bin:$PATH"

@@ -1,3 +1,15 @@
+autoload -Uz add-zsh-hook
+
+# mise (runtime version manager)
+eval "$(mise activate zsh)"
+
+# FLUTTER_ROOT をディレクトリ変更時に動的更新
+function _update_flutter_root() {
+  export FLUTTER_ROOT="$(mise where flutter 2>/dev/null)"
+}
+add-zsh-hook chpwd _update_flutter_root
+_update_flutter_root  # 起動時にも実行
+
 # Completion
 autoload -U compinit && compinit -C
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -49,7 +61,6 @@ local p_vcs="%1(v|%F{green}%1v%f|)"
 PROMPT="$p_cdir $p_vcs"$'\n'"$p_mark "
 
 # Recent dirs
-autoload -Uz add-zsh-hook
 autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 200
