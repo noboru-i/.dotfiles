@@ -49,14 +49,30 @@ git clone https://github.com/noboru-i/.dotfiles.git ~/.dotfiles
 **初回のみ** — `darwin-rebuild` はまだ存在しないため `nix run` でブートストラップする。途中で Homebrew のインストールを求めるプロンプトが表示された場合は、そのままインストールして問題ない（`homebrew.nix` で宣言された cask / MAS アプリの管理に必要なため）:
 
 ```sh
-sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles
+make bootstrap
 ```
 
 **2回目以降:**
 
 ```sh
-sudo darwin-rebuild switch --flake ~/.dotfiles
+make switch
 ```
+
+> `make help` で利用可能なコマンド一覧を確認できる。
+
+## 更新
+
+nixpkgs や nix-darwin、home-manager を最新化したいときは `flake.lock` を更新する。
+
+```sh
+make update   # flake.lock を最新コミットに更新
+make switch   # 更新内容を適用
+git add flake.lock
+git commit -m "chore: update flake inputs"
+```
+
+`flake.lock` は依存関係のコミットを固定するファイルで、これを更新しない限り `make switch` を何度実行しても同じバージョンが使われる（再現性が保たれる）。
+定期的（月1回程度）に更新するか、特定のパッケージを最新化したいタイミングで実行する。
 
 ## ツール管理
 
