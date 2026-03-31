@@ -11,9 +11,9 @@ export PATH="$HOME/.rd/bin:$PATH"
 
 # Dart tool
 export PATH="$PATH:$HOME/.pub-cache/bin"
-# Java
-if JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null); then
-  export JAVA_HOME
+# Java (Nix-managed JDK)
+if command -v java &>/dev/null; then
+  export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
   export PATH="${JAVA_HOME}/bin:$PATH"
 fi
 # Android
