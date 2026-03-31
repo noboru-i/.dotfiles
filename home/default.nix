@@ -34,9 +34,6 @@ in
     # vim
     ".vimrc".source                            = link "config/vim/vimrc";
 
-    # runtime versions
-    ".tool-versions".source                    = link "config/mise/tool-versions";
-
     # claude
     ".claude/commands/create-pr.md".source     = link "config/claude/commands/create-pr.md";
     ".claude/settings.json".source             = link "config/claude/settings.json";
@@ -44,7 +41,8 @@ in
   };
 
   xdg.configFile = {
-    "ghostty/config".source = link "config/ghostty/config";
-    "gh/config.yml".source  = link "config/gh/config.yml";
+    "ghostty/config".source  = link "config/ghostty/config";
+    "gh/config.yml".source   = link "config/gh/config.yml";
+    "mise/config.toml".source = link "config/mise/config.toml";
   };
 }
