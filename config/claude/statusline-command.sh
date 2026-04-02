@@ -96,29 +96,18 @@ five_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty' 2
 seven_util=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty' 2>/dev/null)
 seven_reset=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty' 2>/dev/null)
 
-# Convert ISO 8601 to epoch seconds (macOS compatible)
-iso_to_epoch() {
-  local iso_time=$1
-  local stripped="${iso_time%%.*}"
-  TZ=UTC date -j -f "%Y-%m-%dT%H:%M:%S" "$stripped" +%s 2>/dev/null || echo ""
-}
-
 # Format reset time for 5h window: "Resets 5pm (Asia/Tokyo)"
 format_5h_reset() {
-  local iso_time=$1
-  local epoch
-  epoch=$(iso_to_epoch "$iso_time")
+  local epoch=$1
   [ -z "$epoch" ] && return
-  LC_ALL=en_US.UTF-8 TZ="Asia/Tokyo" date -r "$epoch" +"Resets %-l%p (Asia/Tokyo)" 2>/dev/null | sed 's/AM/am/;s/PM/pm/'
+  TZ="Asia/Tokyo" /bin/date -r "$epoch" +"(until %m/%d %H:%M)" 2>/dev/null
 }
 
 # Format reset time for 7d window: "Resets Mar 6 at 12pm (Asia/Tokyo)"
 format_7d_reset() {
-  local iso_time=$1
-  local epoch
-  epoch=$(iso_to_epoch "$iso_time")
+  local epoch=$1
   [ -z "$epoch" ] && return
-  LC_ALL=en_US.UTF-8 TZ="Asia/Tokyo" date -r "$epoch" +"Resets %b %-d at %-l%p (Asia/Tokyo)" 2>/dev/null | sed 's/AM/am/;s/PM/pm/'
+  TZ="Asia/Tokyo" /bin/date -r "$epoch" +"(until %m/%d %H:%M)" 2>/dev/null
 }
 
 if [ -n "$five_util" ]; then
