@@ -143,10 +143,7 @@ else
 fi
 
 # ── Output ──
-printf '%b' "$line1"
-if [ -n "$line2" ]; then
-  printf '\n%b' "$line2"
-fi
-if [ -n "$line3" ]; then
-  printf '\n%b' "$line3"
-fi
+output="$line1"
+if [ -n "$line2" ]; then output+=$'\n'"$line2"; fi
+if [ -n "$line3" ]; then output+=$'\n'"$line3"; fi
+printf '%b' "$output"
