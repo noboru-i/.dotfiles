@@ -9,24 +9,82 @@
   },
   "model": "opusplan",
   "hooks": {
-    "Notification": [
+    "UserPromptSubmit": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Claude Codeがあなたの入力を待っています\" with title \"Claude Code\" sound name \"Basso\"'"
+            "command": "~/Library/Application\\ Support/AIProgressMonitor/hook.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/Library/Application\\ Support/AIProgressMonitor/hook.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/Library/Application\\ Support/AIProgressMonitor/hook.sh"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/Library/Application\\ Support/AIProgressMonitor/hook.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/Library/Application\\ Support/AIProgressMonitor/hook.sh"
           }
         ]
       }
     ],
     "Stop": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Claude Codeのタスクが完了しました\" with title \"Claude Code\" sound name \"Glass\"'"
+            "command": "~/Library/Application\\ Support/AIProgressMonitor/hook.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/Library/Application\\ Support/AIProgressMonitor/hook.sh"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/Library/Application\\ Support/AIProgressMonitor/hook.sh"
           }
         ]
       }
