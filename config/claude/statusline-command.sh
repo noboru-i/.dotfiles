@@ -133,17 +133,19 @@ if [ -n "$five_util" ]; then
       [ -n "$seven_reset_str" ] && line3+=" ${GRAY}${seven_reset_str}${RESET}"
     fi
   fi
-else
-  # ── API key mode: session cost ──
-  session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty' 2>/dev/null)
-  if [ -n "$session_cost" ] && awk -v c="$session_cost" 'BEGIN { exit !(c+0 != 0) }'; then
-    cost_fmt=$(awk -v c="$session_cost" 'BEGIN { printf "$%.4f", c }')
-    line2="${GRAY}💰 Session${RESET} ${cost_fmt}"
-  fi
+fi
+
+# ── Session cost ──
+line4=""
+session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty' 2>/dev/null)
+if [ -n "$session_cost" ] && awk -v c="$session_cost" 'BEGIN { exit !(c+0 != 0) }'; then
+  cost_fmt=$(awk -v c="$session_cost" 'BEGIN { printf "$%.4f", c }')
+  line4="${GRAY}💰 Session${RESET} ${cost_fmt}"
 fi
 
 # ── Output ──
 output="$line1"
 if [ -n "$line2" ]; then output+=$'\n'"$line2"; fi
 if [ -n "$line3" ]; then output+=$'\n'"$line3"; fi
+if [ -n "$line4" ]; then output+=$'\n'"$line4"; fi
 printf '%b' "$output"
