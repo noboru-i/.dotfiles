@@ -5,6 +5,9 @@
       autoUpdate = false;
       cleanup = "zap";
     };
+    taps = [
+      "gechr/tap"
+    ];
     brews = [
       "cocoapods"
     ];
@@ -29,6 +32,7 @@
       "slack"
       "visual-studio-code"
       "visual-studio-code@insiders"
+      "gechr/tap/whichspace"
       "zoom"
     ];
     masApps = {
