@@ -17,6 +17,7 @@
     gnupg
 
     # Development
+    terraform
     ollama
     uv
     claude-code-bin
