@@ -17,6 +17,7 @@
     gnupg
 
     # Development
+    pinact
     terraform
     ollama
     uv
