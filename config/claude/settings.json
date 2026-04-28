@@ -94,8 +94,9 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
-  "language": "japanese",
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
-  }
+  },
+  "language": "japanese",
+  "theme": "light"
 }
