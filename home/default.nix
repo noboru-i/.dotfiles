@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, username, ... }:
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
   link = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
@@ -8,8 +8,8 @@ in
     ./packages.nix
   ];
 
-  home.username = "noboruishikura";
-  home.homeDirectory = "/Users/noboruishikura";
+  home.username = username;
+  home.homeDirectory = "/Users/${username}";
   home.stateVersion = "24.11";
 
   home.file = {
