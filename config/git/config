@@ -49,8 +49,8 @@
 [http]
   postBuffer = 524288000
 [credential "https://github.com"]
-	helper = 
-	helper = !/etc/profiles/per-user/noboruishikura/bin/gh auth git-credential
+	helper =
+	helper = !/etc/profiles/per-user/$USER/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
-	helper = !/etc/profiles/per-user/noboruishikura/bin/gh auth git-credential
+	helper =
+	helper = !/etc/profiles/per-user/$USER/bin/gh auth git-credential
