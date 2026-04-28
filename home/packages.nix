@@ -22,6 +22,7 @@
     ollama
     uv
     claude-code-bin
+    codex
     firebase-tools
     mise
     graphviz

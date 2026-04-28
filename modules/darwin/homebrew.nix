@@ -31,7 +31,7 @@
       "obsidian"
       "openscad@snapshot"
       "rancher"
-      "skitch"
+      # "skitch"
       "slack"
       "visual-studio-code"
       "visual-studio-code@insiders"
