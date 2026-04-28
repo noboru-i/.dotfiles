@@ -24,6 +24,7 @@
         name = hostname;
         value = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
+          specialArgs = { inherit username; };
           modules = [
             ./hosts/${hostname}
             home-manager.darwinModules.home-manager

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   imports = [
     ./homebrew.nix
     ./macos.nix
@@ -16,14 +16,14 @@
 
   programs.zsh.enable = true;
 
-  users.users.noboruishikura = {
-    name = "noboruishikura";
-    home = "/Users/noboruishikura";
+  users.users.${username} = {
+    name = username;
+    home = "/Users/${username}";
   };
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  system.primaryUser = "noboruishikura";
+  system.primaryUser = username;
 
   environment.systemPackages = with pkgs; [];
 
