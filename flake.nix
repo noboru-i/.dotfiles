@@ -18,6 +18,7 @@
       hosts = [
         "NI-Air-2020"
         "NI-Air-2026"
+        "ML-00861"
       ];
       mkDarwin = hostname: {
         name = hostname;
