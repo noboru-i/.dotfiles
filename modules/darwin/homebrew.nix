@@ -38,12 +38,10 @@
       "gechr/tap/whichspace"
       "zoom"
     ];
-    masApps = {
-      "Keynote" = 409183694;
-      "LINE" = 539883307;
-      "Numbers" = 409203825;
-      "Transporter" = 1450874784;
-      "Xcode" = 497799835;
-    };
+    # masApps は nix-darwin の mas get バグにより無効化中 (mas install が正しいコマンド)
+    # 以下は App Store から手動インストール:
+    #   Keynote (409183694), LINE (539883307), Numbers (409203825)
+    #   Transporter (1450874784), Xcode (497799835)
+    masApps = {};
   };
 }
