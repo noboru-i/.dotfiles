@@ -1,0 +1,31 @@
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+project_doc_fallback_filenames = ["CLAUDE.md"]
+
+[projects."/Users/noboruishikura/.dotfiles"]
+trust_level = "trusted"
+
+[projects."/Users/noboruishikura/ghq/github.com/noboru-i/kyouen-flutter"]
+trust_level = "trusted"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-04-28T15:45:31Z"
+source_type = "local"
+source = "/Users/noboruishikura/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-04-28T15:45:46Z"
+source_type = "local"
+source = "/Users/noboruishikura/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true

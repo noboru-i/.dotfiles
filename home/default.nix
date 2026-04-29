@@ -38,6 +38,9 @@ in
     ".claude/commands/create-pr.md".source     = link "config/claude/commands/create-pr.md";
     ".claude/settings.json".source             = link "config/claude/settings.json";
     ".claude/statusline-command.sh".source     = link "config/claude/statusline-command.sh";
+
+    # codex
+    ".codex/config.toml".source                 = link "config/codex/config.toml";
   };
 
   xdg.configFile = {
