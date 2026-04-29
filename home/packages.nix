@@ -21,7 +21,7 @@
     terraform
     ollama
     uv
-    claude-code-bin
+    claude-code
     codex
     firebase-tools
     mise

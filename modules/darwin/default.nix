@@ -13,6 +13,14 @@
   nix.settings.extra-nix-path = [ "nixpkgs=flake:nixpkgs" ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [
+    (_final: prev: {
+      # direnv 2.37.1 の zsh テストが aarch64-darwin でハングするため、ビルド時チェックだけ無効化する。
+      direnv = prev.direnv.overrideAttrs (_old: {
+        doCheck = false;
+      });
+    })
+  ];
 
   programs.zsh.enable = true;
 
