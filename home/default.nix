@@ -28,6 +28,7 @@ in
 
     # git
     ".gitconfig".source                        = link "config/git/config";
+    ".gitconfig-noboru-i".source               = link "config/git/config-noboru-i";
     ".gitattributes".source                    = link "config/git/attributes";
     ".gitignore-global".source                 = link "config/git/ignore";
 
