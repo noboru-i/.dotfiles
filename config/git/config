@@ -2,8 +2,9 @@
   b = branch
   ba = branch --all
   co = checkout
-  d = diff
+  d = -c delta.side-by-side=true diff
   dc = diff --cached
+  dl = diff
   l = log --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
   lv = log --name-status --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
   s = status --branch --short
@@ -17,15 +18,23 @@
   editor = /usr/bin/vim
   attributesfile = ~/.gitattributes
   quotepath = false
+  pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
 
 [merge]
   ff = false
+  conflictStyle = zdiff3
 [pull]
   ff = only
 
 [user]
   name = noboru-i
-  email = ishikura.noboru@gmail.com
+  email = noboru.ishikura@monstar-lab.com
+
+[includeIf "gitdir:~/ghq/github.com/noboru-i/**"]
+  path = ~/.gitconfig-noboru-i
 
 [push]
   default = current
@@ -36,10 +45,15 @@
 [ghq]
   root = ~/ghq
 
-[filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
 [credential]
 	helper = osxkeychain
 [init]
 	defaultBranch = main
+[http]
+  postBuffer = 524288000
+[credential "https://github.com"]
+	helper =
+	helper = !/etc/profiles/per-user/$USER/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/etc/profiles/per-user/$USER/bin/gh auth git-credential
