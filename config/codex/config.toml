@@ -8,6 +8,9 @@ trust_level = "trusted"
 [projects."/Users/noboruishikura/ghq/github.com/noboru-i/kyouen-flutter"]
 trust_level = "trusted"
 
+[projects."/Users/noboruishikura/ghq/github.com/noboru-i/kyouen-server"]
+trust_level = "trusted"
+
 [marketplaces.openai-bundled]
 last_updated = "2026-04-28T15:45:31Z"
 source_type = "local"
@@ -29,3 +32,9 @@ enabled = true
 
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
