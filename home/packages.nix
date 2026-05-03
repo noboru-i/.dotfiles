@@ -25,6 +25,7 @@
     firebase-tools
     mise
     graphviz
+    ffmpeg
     terminal-notifier
     qemu
     mas
