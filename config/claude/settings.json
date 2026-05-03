@@ -98,5 +98,6 @@
     "swift-lsp@claude-plugins-official": true
   },
   "language": "japanese",
+  "effortLevel": "medium",
   "theme": "light"
 }
