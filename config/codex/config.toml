@@ -36,5 +36,8 @@ enabled = true
 [plugins."github@openai-curated"]
 enabled = true
 
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "project-name", "git-branch", "run-state", "context-used", "five-hour-limit", "weekly-limit", "codex-version", "fast-mode"]
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
