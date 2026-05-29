@@ -17,6 +17,7 @@
     gnupg
 
     # Development
+    yarn
     pinact
     terraform
     ollama
