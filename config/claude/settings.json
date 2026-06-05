@@ -101,5 +101,13 @@
   },
   "language": "japanese",
   "effortLevel": "medium",
-  "theme": "light"
+  "theme": "light",
+  "extraKnownMarketplaces": {
+    "ml-plugins": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/monstar-lab-group/ml-claude-plugins.git"
+      }
+    }
+  }
 }
