@@ -19,5 +19,4 @@ description: Create a GitHub PullRequest
 4. `gh pr create` でプルリクエストを作成する
    - `.github/pull_request_template.md` が存在する場合は、そのフォーマットに従ってPR本文を記載する
    - テンプレートが存在しない場合は、変更内容を簡潔にまとめた本文を記載する
-
-複数のツールを1つのメッセージで呼び出すこと。他のツールは使わず、テキストメッセージも送らないこと。
+   - 明確な指示がない場合は、Draft状態で作成する
