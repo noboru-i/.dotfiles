@@ -18,5 +18,6 @@ description: Create a GitHub PullRequest
 3. ブランチをoriginにpushする
 4. `gh pr create` でプルリクエストを作成する
    - `.github/pull_request_template.md` が存在する場合は、そのフォーマットに従ってPR本文を記載する
+      - チェックリストは項目を削除せず、該当する項目にのみ `[x]` を付ける
    - テンプレートが存在しない場合は、変更内容を簡潔にまとめた本文を記載する
    - 明確な指示がない場合は、Draft状態で作成する
