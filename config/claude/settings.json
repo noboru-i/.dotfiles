@@ -5,9 +5,12 @@
   },
   "permissions": {
     "allow": [],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
   "model": "opusplan",
+  "skillOverrides": {
+    "image-list": "off"
+  },
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -95,13 +98,11 @@
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "swift-lsp@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true,
-    "figma@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": false,
+    "skill-creator@claude-plugins-official": false,
+    "figma@claude-plugins-official": false,
+    "gopls-lsp@claude-plugins-official": false
   },
-  "language": "japanese",
-  "effortLevel": "medium",
-  "theme": "light",
   "extraKnownMarketplaces": {
     "ml-plugins": {
       "source": {
@@ -109,5 +110,10 @@
         "url": "https://github.com/monstar-lab-group/ml-claude-plugins.git"
       }
     }
-  }
+  },
+  "language": "japanese",
+  "effortLevel": "medium",
+  "advisorModel": "opus",
+  "theme": "light",
+  "autoCompactEnabled": true
 }
