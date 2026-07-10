@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画像ファイル一覧</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
+    header { background: #1a1a2e; color: white; padding: 20px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    header h1 { font-size: 18px; font-weight: 600; }
+    header p { font-size: 13px; color: #aaa; margin-top: 4px; }
+    .controls { background: white; padding: 12px 24px; border-bottom: 1px solid #e0e0e0; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .controls input { padding: 7px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; width: 280px; }
+    .controls select { padding: 7px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: white; }
+    .controls label { font-size: 13px; color: #666; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+    #stats { font-size: 13px; color: #888; margin-left: auto; }
+    .group-header { background: #e8eaf6; padding: 8px 24px; font-size: 12px; font-weight: 600; color: #3949ab; letter-spacing: 0.5px; border-bottom: 1px solid #c5cae9; position: sticky; top: 110px; z-index: 50; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    thead th { background: #f8f9fa; padding: 10px 16px; text-align: left; font-size: 12px; font-weight: 600; color: #555; border-bottom: 2px solid #e0e0e0; position: sticky; top: 148px; z-index: 40; white-space: nowrap; }
+    thead th:nth-child(1) { width: 48px; text-align: center; }
+    thead th:nth-child(2) { width: 260px; text-align: center; }
+    thead th:nth-child(3) { min-width: 200px; }
+    thead th:nth-child(4) { width: 80px; text-align: center; }
+    thead th:nth-child(5) { width: 130px; text-align: center; }
+    tbody tr { border-bottom: 1px solid #f0f0f0; transition: background 0.1s; }
+    tbody tr:hover { background: #fafbff; }
+    tbody tr.hidden { display: none; }
+    td { padding: 8px 16px; font-size: 13px; vertical-align: middle; }
+    td:nth-child(1) { text-align: center; color: #aaa; font-size: 11px; }
+    td.thumb { text-align: center; padding: 6px; }
+    td.thumb img { max-width: 240px; max-height: 180px; object-fit: contain; display: block; margin: auto; background: repeating-conic-gradient(#e0e0e0 0% 25%, white 0% 50%) 0 0 / 10px 10px; border: 1px solid #ddd; border-radius: 3px; }
+    td.path { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; word-break: break-all; }
+    td.path .dir { color: #888; }
+    td.path .filename { color: #1a56db; font-weight: 500; }
+    td.ext { text-align: center; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+    .badge-svg  { background: #fff3e0; color: #e65100; }
+    .badge-png  { background: #e3f2fd; color: #1565c0; }
+    .badge-jpg, .badge-jpeg { background: #f3e5f5; color: #6a1b9a; }
+    .badge-gif  { background: #e8f5e9; color: #2e7d32; }
+    .badge-ico  { background: #fce4ec; color: #ad1457; }
+    .badge-webp { background: #e0f2f1; color: #00695c; }
+    .badge-bmp  { background: #f1f8e9; color: #558b2f; }
+    td.size-cell { text-align: center; font-family: monospace; font-size: 12px; color: #555; }
+    td.size-cell .loading { color: #bbb; font-style: italic; }
+    td.size-cell .error   { color: #f44336; font-size: 11px; }
+    .no-results { text-align: center; padding: 40px; color: #888; font-size: 14px; }
+    .section-wrapper { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>画像ファイル一覧</h1>
+  <p>__REPO_NAME__ — node_modules / .git 除外</p>
+</header>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="ファイル名・パスで絞り込み…" oninput="filterImages()">
+  <select id="typeFilter" onchange="filterImages()">
+    <option value="">すべての形式</option>
+    <option value="svg">SVG</option>
+    <option value="png">PNG</option>
+    <option value="jpg">JPG</option>
+    <option value="jpeg">JPEG</option>
+    <option value="gif">GIF</option>
+    <option value="ico">ICO</option>
+    <option value="webp">WebP</option>
+    <option value="bmp">BMP</option>
+  </select>
+  <label><input type="checkbox" id="groupToggle" checked onchange="renderTable()"> ディレクトリ別にグループ化</label>
+  <span id="stats"></span>
+</div>
+
+<div id="content"></div>
+
+<script>
+const IMAGES = __IMAGES_JSON__;
+
+function getExt(path)      { return path.split('.').pop().toLowerCase(); }
+function getDir(path)      { const p = path.split('/'); p.pop(); return p.join('/') || '.'; }
+function getFilename(path) { return path.split('/').pop(); }
+
+let currentFilter = '';
+let currentType   = '';
+let rowData = [];
+
+function renderTable() {
+  const grouped = document.getElementById('groupToggle').checked;
+  const content  = document.getElementById('content');
+  content.innerHTML = '';
+
+  const filtered = rowData.filter(r => {
+    const matchText = !currentFilter || r.path.toLowerCase().includes(currentFilter);
+    const matchType = !currentType   || r.ext === currentType;
+    return matchText && matchType;
+  });
+
+  document.getElementById('stats').textContent = `${filtered.length} / ${rowData.length} 件`;
+
+  if (filtered.length === 0) {
+    content.innerHTML = '<div class="no-results">条件に一致する画像がありません</div>';
+    return;
+  }
+
+  if (grouped) {
+    const groups = {};
+    filtered.forEach(r => { (groups[r.dir] = groups[r.dir] || []).push(r); });
+    Object.entries(groups).sort(([a],[b]) => a.localeCompare(b)).forEach(([dir, rows]) => {
+      const section = document.createElement('div');
+      section.className = 'section-wrapper';
+      const gh = document.createElement('div');
+      gh.className = 'group-header';
+      gh.textContent = `📁 ${dir}  (${rows.length}件)`;
+      section.appendChild(gh);
+      section.appendChild(createTable(rows));
+      content.appendChild(section);
+    });
+  } else {
+    content.appendChild(createTable(filtered));
+  }
+}
+
+function createTable(rows) {
+  const table = document.createElement('table');
+  table.innerHTML = `
+    <thead><tr>
+      <th>#</th><th>プレビュー</th><th>ファイルパス</th>
+      <th>形式</th><th>解像度 (W × H)</th>
+    </tr></thead>`;
+  const tbody = document.createElement('tbody');
+
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${r.index + 1}</td>
+      <td class="thumb"><img src="${r.path}" alt="${r.filename}" loading="lazy" data-id="${r.index}"></td>
+      <td class="path"><span class="dir">${r.dir}/</span><span class="filename">${r.filename}</span></td>
+      <td class="ext"><span class="badge badge-${r.ext}">${r.ext.toUpperCase()}</span></td>
+      <td class="size-cell" id="dim-${r.index}"><span class="loading">計測中…</span></td>`;
+    tbody.appendChild(tr);
+
+    const img = tr.querySelector('img');
+    img.onload = () => {
+      const cell = document.getElementById(`dim-${r.index}`);
+      if (!cell) return;
+      const w = img.naturalWidth, h = img.naturalHeight;
+      cell.textContent = (w && h) ? `${w} × ${h}` : '—';
+    };
+    img.onerror = () => {
+      const cell = document.getElementById(`dim-${r.index}`);
+      if (cell) cell.innerHTML = '<span class="error">読込エラー</span>';
+      img.style.opacity = '0.3';
+    };
+  });
+
+  table.appendChild(tbody);
+  return table;
+}
+
+function filterImages() {
+  currentFilter = document.getElementById('search').value.toLowerCase();
+  currentType   = document.getElementById('typeFilter').value.toLowerCase();
+  renderTable();
+}
+
+rowData = IMAGES.map((path, index) => ({
+  index, path,
+  dir:      getDir(path),
+  filename: getFilename(path),
+  ext:      getExt(path),
+}));
+
+renderTable();
+</script>
+</body>
+</html>
