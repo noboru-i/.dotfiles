@@ -17,6 +17,7 @@
     gnupg
 
     # Development
+    android-cli
     yarn
     pinact
     terraform
