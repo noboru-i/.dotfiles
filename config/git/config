@@ -9,6 +9,7 @@
   lv = log --name-status --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
   s = status --branch --short
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+	delete-merged-worktree = "!git worktree list --porcelain | grep \"branch refs/heads/\" | sed \"s|branch refs/heads/||\" | while read branch; do if git branch --merged | grep -qx \"  $branch\"; then worktree=$(git worktree list --porcelain | awk \"/^worktree/{path=\\$2} /^branch refs\\\\/heads\\\\/$branch$/{print path}\"); git worktree remove --force \"$worktree\" && echo \"removed worktree: $worktree ($branch)\"; fi; done"
 
 [color]
   ui = true
