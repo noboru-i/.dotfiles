@@ -32,6 +32,7 @@
       "obsidian"
       "openscad@snapshot"
       "rancher"
+      "raycast"
       # "skitch"
       "slack"
       "visual-studio-code"
