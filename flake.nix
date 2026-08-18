@@ -11,9 +11,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    herdr = {
+      url = "github:herdrdev/herdr/v0.8.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager, ... }:
+  outputs = { self, nixpkgs, nix-darwin, home-manager, herdr, ... }:
     let
       hostConfigs = [
         { hostname = "NI-Air-2020"; username = "noboruishikura"; }
@@ -34,7 +38,10 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "before-home-manager";
               home-manager.users.${username} = import ./home;
-              home-manager.extraSpecialArgs = { inherit username; };
+              home-manager.extraSpecialArgs = {
+                inherit username;
+                herdrPkg = herdr.packages.aarch64-darwin.default;
+              };
             }
           ];
         };
