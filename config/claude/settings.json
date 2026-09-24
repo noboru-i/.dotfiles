@@ -135,6 +135,12 @@
   "language": "japanese",
   "effortLevel": "medium",
   "advisorModel": "opus",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
   "theme": "light",
-  "autoCompactEnabled": true
+  "autoCompactEnabled": true,
+  "agentPushNotifEnabled": true,
+  "voiceEnabled": true
 }
