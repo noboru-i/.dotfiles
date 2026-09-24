@@ -33,6 +33,7 @@
       "obsidian"
       "openscad@snapshot"
       "rancher"
+      "raspberry-pi-imager"
       "raycast"
       # "skitch"
       "slack"
