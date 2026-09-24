@@ -15,6 +15,7 @@
       "1password"
       "alfred"
       "android-studio"
+      "arduino-ide"
       "bambu-studio"
       "claude"
       "codex" # CLI は原則 Nix 管理だが、nixpkgs の追従が遅いため例外的に Homebrew cask で管理する。
