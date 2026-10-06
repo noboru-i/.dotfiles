@@ -111,6 +111,16 @@
           }
         ]
       }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/Library/Application\\ Support/AIProgressMonitor/hook.sh"
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
@@ -134,6 +144,11 @@
   },
   "language": "japanese",
   "effortLevel": "medium",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
   "advisorModel": "opus",
   "voice": {
     "enabled": true,
