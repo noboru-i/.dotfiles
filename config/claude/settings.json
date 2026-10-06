@@ -90,16 +90,6 @@
             "timeout": 10
           }
         ]
-      },
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash '/Users/noboru_ishikura/.claude/hooks/herdr-agent-state.sh' session",
-            "timeout": 10
-          }
-        ]
       }
     ],
     "SessionEnd": [
