@@ -1,10 +1,18 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "env": {
-    "EDITOR": "code"
-  },
   "permissions": {
     "allow": [],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(pip:*)",
+      "Bash(pip3:*)",
+      "Bash(pipx:*)",
+      "Bash(poetry:*)",
+      "Bash(python -m pip:*)",
+      "Bash(python3 -m pip:*)",
+      "Read(~/.ssh/**)",
+      "Read(**/.env)"
+    ],
     "defaultMode": "auto"
   },
   "model": "opusplan",
