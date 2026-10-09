@@ -10,6 +10,9 @@ function _update_flutter_root() {
 add-zsh-hook chpwd _update_flutter_root
 _update_flutter_root  # 起動時にも実行
 
+# ここより下は人間向けの設定（AI エージェントのシェルでは読み込まない）
+is_human || return 0
+
 # Completion
 autoload -U compinit && compinit -C
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -45,6 +48,7 @@ zstyle ':zle:*' word-style unspecified
 alias ls='eza --icons -a --group-directories-first --time-style=long-iso --hyperlink=always'
 alias ll='eza --icons -al --group-directories-first --time-style=long-iso --hyperlink=always'
 alias tree='eza --icons -a -T -L 2'
+alias rm='trash-put'
 
 # Prompt
 local p_cdir="%B%F{blue}[%~]%f%b"

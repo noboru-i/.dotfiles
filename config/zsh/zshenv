@@ -1,0 +1,20 @@
+# どのシェルでも読まれる。デフォルトは AI エージェント、人間向け設定は opt-in。
+# 人間向けの設定は zshrc の `is_human || return 0` より下に書くこと。
+
+# stdin/stdout が TTY で、AI エージェントの環境変数がないときだけ人間とみなす
+is_human() {
+  [[ -t 0 && -t 1 ]] || return 1
+  [[ -z $CLAUDECODE$CODEX_SANDBOX$GEMINI_CLI$CURSOR_AGENT$AI_AGENT ]]
+}
+
+if is_human; then
+  export EDITOR=vim PAGER=less
+else
+  # エディタ・ページャ・パスワード入力には誰も答えられないので即座に失敗させる
+  export EDITOR=true VISUAL=true GIT_EDITOR=true GIT_SEQUENCE_EDITOR=true
+  export PAGER=cat GIT_PAGER=cat MANPAGER=cat
+  export GIT_TERMINAL_PROMPT=0
+
+  # 誤削除してもゴミ箱から戻せるようにする（rm のオプションはそのまま受け付ける）
+  alias rm='trash-put'
+fi
