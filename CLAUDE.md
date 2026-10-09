@@ -11,6 +11,13 @@
   - ディレクトリ全体を symlink に切り替える変更をするときは、適用前に実体ディレクトリ（例: `~/.claude/skills`）が既に存在していないか確認し、あれば削除してから `make switch` する（home-manager は既存の実体ディレクトリをリンクで自動上書きしない）。
 - 一方 `config/claude/commands/` は現状ファイル単位でリンクしている（`create-pr.md` のみ）。新しいコマンドを追加したら `home/default.nix` にリンクが漏れていないか確認する。
 
+## シェル設定の方針（AI ファースト）
+
+- デフォルトは AI エージェント向けの素のシェル。人間向けの設定は opt-in とする。
+- `config/zsh/zshenv` の `is_human`（TTY かつ AI 用環境変数なし）で人間/AI を判定する。AI 側では `EDITOR=true`・`PAGER=cat` などで入力待ちを防ぐ。
+- `config/zsh/zshrc` は `is_human || return 0` より上に AI にも必要なもの（mise など）、下に人間向け（エイリアス、プロンプト、プラグイン、キーバインド）を書く。エイリアスは必ずガードより下に置く。
+- GNU coreutils は PATH に入れない（AI が書く BSD 流のコマンドを壊さないため）。
+
 ## コミット運用
 
 - 個人の dotfiles リポジトリであり PR フローは使わない運用のため、特別な指示がない限り `main` ブランチに直接コミットしてよい（ブランチを切らない）。
