@@ -17,7 +17,6 @@
     ast-grep
     shellcheck
     shfmt
-    trash-cli
     tree
     curl
     gnupg

@@ -48,7 +48,6 @@ zstyle ':zle:*' word-style unspecified
 alias ls='eza --icons -a --group-directories-first --time-style=long-iso --hyperlink=always'
 alias ll='eza --icons -al --group-directories-first --time-style=long-iso --hyperlink=always'
 alias tree='eza --icons -a -T -L 2'
-alias rm='trash-put'
 
 # Prompt
 local p_cdir="%B%F{blue}[%~]%f%b"

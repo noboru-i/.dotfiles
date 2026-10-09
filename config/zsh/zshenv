@@ -14,7 +14,4 @@ else
   export EDITOR=true VISUAL=true GIT_EDITOR=true GIT_SEQUENCE_EDITOR=true
   export PAGER=cat GIT_PAGER=cat MANPAGER=cat
   export GIT_TERMINAL_PROMPT=0
-
-  # 誤削除してもゴミ箱から戻せるようにする（rm のオプションはそのまま受け付ける）
-  alias rm='trash-put'
 fi
