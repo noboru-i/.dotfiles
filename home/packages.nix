@@ -11,8 +11,14 @@
     bat
     fzf
     jq
+    yq-go
+    ripgrep
+    fd
+    ast-grep
+    shellcheck
+    shfmt
+    trash-cli
     tree
-    coreutils
     curl
     gnupg
 
