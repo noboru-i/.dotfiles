@@ -14,4 +14,7 @@ else
   export EDITOR=true VISUAL=true GIT_EDITOR=true GIT_SEQUENCE_EDITOR=true
   export PAGER=cat GIT_PAGER=cat MANPAGER=cat
   export GIT_TERMINAL_PROMPT=0
+
+  # 誤削除しても Finder のゴミ箱から戻せるようにする
+  [[ -r ~/.zsh/rm.zsh ]] && source ~/.zsh/rm.zsh
 fi

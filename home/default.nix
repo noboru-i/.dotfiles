@@ -23,6 +23,7 @@ in
     # zsh 設定ファイル
     ".zshrc".source                            = link "config/zsh/zshrc";
     ".zshenv".source                           = link "config/zsh/zshenv";
+    ".zsh/rm.zsh".source                       = link "config/zsh/rm.zsh";
     ".zprofile".source                         = link "config/zsh/zprofile";
     ".zsh/fzf-sources/ghq-list.zsh".source     = link "config/zsh/fzf-sources/ghq-list.zsh";
     ".zsh/fzf-sources/git.zsh".source          = link "config/zsh/fzf-sources/git.zsh";
