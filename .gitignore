@@ -1,2 +1,3 @@
 *.local.json
 config/claude/skills/synced/
+config/claude/skills/.trash/
