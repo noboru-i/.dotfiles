@@ -15,7 +15,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opusplan",
   "skillOverrides": {
     "image-list": "off"
   },
