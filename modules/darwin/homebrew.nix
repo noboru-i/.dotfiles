@@ -6,21 +6,15 @@
       cleanup = "zap";
     };
     taps = [
-      "gechr/tap"
     ];
     brews = [
       "cocoapods"
     ];
     casks = [
       "1password"
-      "alfred"
       "android-studio"
-      "arduino-ide"
-      "bambu-studio"
       "claude"
       "codex" # CLI は原則 Nix 管理だが、nixpkgs の追従が遅いため例外的に Homebrew cask で管理する。
-      "dbeaver-community"
-      "discord"
       "dropbox"
       "font-hack-nerd-font"
       "font-hackgen"
@@ -29,17 +23,12 @@
       "google-chrome"
       "google-japanese-ime"
       "imageoptim"
-      "notion"
       "obsidian"
-      "openscad@snapshot"
       "rancher"
       "raspberry-pi-imager"
       "raycast"
-      # "skitch"
       "slack"
       "visual-studio-code"
-      "visual-studio-code@insiders"
-      "gechr/tap/whichspace"
       "zoom"
     ];
     # masApps は nix-darwin の mas get バグにより無効化中 (mas install が正しいコマンド)
