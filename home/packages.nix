@@ -26,7 +26,6 @@
     yarn
     pinact
     terraform
-    ollama
     uv
     claude-code
     firebase-tools
