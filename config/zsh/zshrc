@@ -10,6 +10,10 @@ function _update_flutter_root() {
 add-zsh-hook chpwd _update_flutter_root
 _update_flutter_root  # 起動時にも実行
 
+# Added by LM Studio CLI (lms)
+[ -d "$HOME/.lmstudio/bin" ] && export PATH="$PATH:$HOME/.lmstudio/bin"
+# End of LM Studio CLI section
+
 # ここより下は人間向けの設定（AI エージェントのシェルでは読み込まない）
 is_human || return 0
 
