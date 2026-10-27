@@ -6,6 +6,7 @@
   homebrew.casks = [
     "arduino-ide"
     "bambu-studio"
+    "comfy"
     "discord"
     "lm-studio"
     "openscad@snapshot"
