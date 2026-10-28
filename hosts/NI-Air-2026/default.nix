@@ -11,6 +11,7 @@
     "discord"
     "lm-studio"
     "openscad@snapshot"
+    "steam"
   ];
 
   # ホスト固有の CLI パッケージ（home/packages.nix の共通リストに連結される）
