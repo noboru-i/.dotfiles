@@ -22,6 +22,7 @@
       hostConfigs = [
         { hostname = "NI-Air-2020"; username = "noboruishikura"; }
         { hostname = "NI-Air-2026"; username = "noboruishikura"; }
+        { hostname = "NI-mini-2026"; username = "noboruishikura"; }
         { hostname = "ML-00861";    username = "noboru_ishikura"; }
       ];
       mkDarwin = { hostname, username }: {
