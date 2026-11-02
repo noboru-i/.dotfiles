@@ -15,6 +15,20 @@ curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 xcode-select --install
 ```
 
+## Homebrew のインストール
+
+nix-darwin の `homebrew` モジュール（`modules/darwin/homebrew.nix`）は Homebrew 本体をインストールせず、既存の `brew` を使って cask / brews を管理するだけなので、`make bootstrap` より前に手動でインストールしておく。
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+インストール完了後に表示される `brew shellenv` を `.zprofile` に追記する案内は不要（PATH は dotfiles 側の zsh 設定で管理する）。現在のシェルで `brew` を使いたい場合のみ以下を実行する:
+
+```sh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
 ## リポジトリのクローン
 
 ```sh
@@ -34,7 +48,7 @@ git clone https://github.com/noboru-i/.dotfiles.git ~/.dotfiles
 
 ## 適用
 
-**初回のみ** — `darwin-rebuild` はまだ存在しないため `nix run` でブートストラップする。途中で Homebrew のインストールを求めるプロンプトが表示された場合は、そのままインストールして問題ない（`homebrew.nix` で宣言された cask / MAS アプリの管理に必要なため）:
+**初回のみ** — `darwin-rebuild` はまだ存在しないため `nix run` でブートストラップする。事前に [Homebrew のインストール](#homebrew-のインストール) を済ませておくこと:
 
 ```sh
 make bootstrap
