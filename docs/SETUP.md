@@ -75,3 +75,10 @@ git commit -m "chore: update flake inputs"
 
 `flake.lock` は依存関係のコミットを固定するファイルで、これを更新しない限り `make switch` を何度実行しても同じバージョンが使われる（再現性が保たれる）。
 定期的（月1回程度）に更新するか、特定のパッケージを最新化したいタイミングで実行する。
+
+## Raycast の設定
+
+Raycast の設定は `config/raycast/raycast.rayconfig` に置いている（エクスポート時にパスワードで暗号化済み）。Raycast はファイルを直接読み込まないので symlink はせず、手動でインポート / エクスポートする。
+
+- **インポート:** Raycast の Settings → Advanced → Import で `config/raycast/raycast.rayconfig` を選び、エクスポート時のパスワードを入力する。
+- **エクスポート（更新）:** Settings → Advanced → Export でパスワード付きで書き出し、`config/raycast/raycast.rayconfig` に上書きしてコミットする（Git で差分を追えるように、ファイル名に日付は付けない）。
