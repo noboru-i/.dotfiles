@@ -6,4 +6,7 @@
   homebrew.brews = [
     "hermes-agent" # CLI は原則 Nix 管理だが、nixpkgs に存在しないため例外的に Homebrew で管理する。
   ];
+
+  # Hermes Agent の gateway を常時稼働させるため、システムをスリープさせない（ディスプレイは対象外）
+  power.sleep.computer = "never";
 }
