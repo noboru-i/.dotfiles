@@ -1,4 +1,4 @@
-{ pkgs, herdrPkg, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # VCS
     git
@@ -39,7 +39,6 @@
     gcc
     bundletool
     libpq
-    herdrPkg
 
     # zsh plugins
     zsh-syntax-highlighting
