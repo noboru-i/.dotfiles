@@ -10,9 +10,12 @@
     "hermes-desktop"
   ];
 
-  # ホスト固有の CLI パッケージ（home/packages.nix の共通リストに連結される）
-  home-manager.users.${username}.home.packages = with pkgs; [
-    lima # Apple Virtualization.framework 上で Linux VM を動かすため
+  # Apple Virtualization.framework 上で Linux VM を動かすため。
+  # 他ユーザー（agent）や launchd の plist からも参照できるよう、home-manager ではなく
+  # システムパッケージにして /run/current-system/sw/bin/limactl という安定したパスで提供する。
+  # （nix store の絶対パスを plist に書くと、更新や GC のたびに壊れるため）
+  environment.systemPackages = with pkgs; [
+    lima
   ];
 
   # Hermes Agent の gateway を常時稼働させるため、システムをスリープさせない（ディスプレイは対象外）
